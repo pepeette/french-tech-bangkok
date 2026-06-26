@@ -9,15 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* ----- French Tech Bangkok Brand Identity ----- */
         :root {
             --ft-red: #E1000F;
             --ft-navy: #1A1A2E;
             --ft-light-bg: #F4F4F6;
             --ft-white: #FFFFFF;
             --ft-text: #1A1A2E;
-            
-            /* Derived tokens */
             --bg: #F4F4F6;
             --bg-card: #FFFFFF;
             --bg-elevated: #F4F4F6;
@@ -42,9 +39,7 @@
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             background: var(--bg);
@@ -53,14 +48,11 @@
             padding: 0 16px 100px;
             font-size: 15px;
         }
-
         .container { max-width: 900px; margin: 0 auto; }
-
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: var(--bg); }
         ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-        /* ===== TYPOGRAPHY ===== */
         h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: var(--ft-navy); }
         h2 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ft-navy); }
         h3 { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.01em; color: var(--text-muted); text-transform: uppercase; }
@@ -68,7 +60,7 @@
         a:hover { text-decoration: underline; }
         p { color: var(--text-muted); line-height: 1.7; }
 
-        /* ===== HERO ===== */
+        /* HERO */
         .hero {
             padding: 2rem 0 2rem;
             border-bottom: 1px solid var(--border);
@@ -76,93 +68,30 @@
             background: var(--ft-white);
             border-radius: var(--radius) var(--radius) 0 0;
         }
-        
-        .hero-logo-title {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .hero-logo {
-            flex-shrink: 0;
-        }
-        
-        .hero-logo img {
-            height: 80px;
-            width: auto;
-            display: block;
-        }
-        
-        .hero-content {
-            flex: 1;
-            min-width: 0;
-        }
-        
+        .hero-logo-title { display: flex; align-items: center; gap: 2rem; }
+        .hero-logo { flex-shrink: 0; }
+        .hero-logo img { height: 80px; width: auto; display: block; }
+        .hero-content { flex: 1; min-width: 0; }
         .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            margin-bottom: 0.3rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.75rem; font-weight: 500; color: var(--text-muted); margin-bottom: 0.3rem;
         }
-        
-        .hero-eyebrow .dot-sep {
-            color: var(--border);
-            font-weight: 300;
-        }
-        
-        .hero-eyebrow i {
-            color: var(--accent);
-            font-size: 0.7rem;
-        }
-        
-        .hero h1 {
-            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.05;
-            color: var(--ft-navy);
-            margin-bottom: 0.2rem;
-        }
-        
-        .hero-tagline {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 0.8rem;
-            max-width: 560px;
-        }
-        
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.3rem 1.2rem;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
+        .hero-eyebrow .dot-sep { color: var(--border); font-weight: 300; }
+        .hero-eyebrow i { color: var(--accent); font-size: 0.7rem; }
+        .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: var(--ft-navy); margin-bottom: 0.2rem; }
+        .hero-tagline { font-size: 1rem; color: var(--text-muted); margin-bottom: 0.8rem; max-width: 560px; }
+        .hero-meta { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: 0.78rem; color: var(--text-muted); }
         .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
         .hero-meta i { color: var(--accent); font-size: 0.7rem; }
-        
+
         @media (max-width: 640px) {
-            .hero-logo-title {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            .hero-logo img {
-                height: 60px;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .hero-meta {
-                gap: 0.3rem 0.8rem;
-                font-size: 0.7rem;
-            }
+            .hero-logo-title { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .hero-logo img { height: 60px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-meta { gap: 0.3rem 0.8rem; font-size: 0.7rem; }
         }
 
-        /* ===== MASTER QUESTION ===== */
+        /* MASTER QUESTION */
         .master-q {
             border: 1px solid var(--accent-border);
             background: linear-gradient(135deg, var(--accent-dim) 0%, rgba(0,0,0,0) 100%);
@@ -172,233 +101,116 @@
             text-align: center;
         }
         .master-q .eyebrow {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 0.6rem;
+            font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--accent); font-weight: 600; margin-bottom: 0.6rem;
         }
         .master-q .q {
-            font-size: clamp(1rem, 3vw, 1.35rem);
-            font-weight: 700;
-            color: var(--ft-navy);
-            line-height: 1.3;
+            font-size: clamp(1rem, 3vw, 1.35rem); font-weight: 700;
+            color: var(--ft-navy); line-height: 1.3;
         }
         .master-q .q i { color: var(--gold); margin-right: 0.3rem; }
-
-        /* ===== NAV ===== */
-        .nav-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 2.5rem;
+        .master-q .q-sub {
+            font-size: 0.82rem; color: var(--text-muted); margin-top: 0.7rem;
+            font-weight: 400; line-height: 1.5;
         }
+
+        /* NAV */
+        .nav-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2.5rem; }
         .nav-pill {
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            background: var(--bg-card);
-            cursor: pointer;
-            transition: all 0.15s;
-            text-decoration: none;
+            font-size: 0.75rem; font-weight: 500; padding: 0.3rem 1rem;
+            border-radius: 20px; border: 1px solid var(--border); color: var(--text-muted);
+            background: var(--bg-card); cursor: pointer; transition: all 0.15s; text-decoration: none;
         }
         .nav-pill:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
 
-        /* ===== SECTION HEADERS ===== */
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            margin: 2.5rem 0 1.2rem;
-        }
+        /* SECTION HEADERS */
+        .section-header { display: flex; align-items: center; gap: 0.7rem; margin: 2.5rem 0 1.2rem; }
         .section-header i { color: var(--accent); font-size: 1rem; }
         .section-header h2 { color: var(--text); }
         .section-header .count {
-            margin-left: auto;
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            padding: 0.15rem 0.6rem;
-            border-radius: 10px;
+            margin-left: auto; font-size: 0.7rem; color: var(--text-dim);
+            background: var(--bg-elevated); border: 1px solid var(--border);
+            padding: 0.15rem 0.6rem; border-radius: 10px;
         }
 
-        /* ===== CARDS ===== */
+        /* CARDS */
         .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.4rem 1.6rem;
-            margin-bottom: 1rem;
-            transition: border-color 0.15s, box-shadow 0.15s;
-            box-shadow: var(--shadow);
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 1.4rem 1.6rem; margin-bottom: 1rem;
+            transition: border-color 0.15s, box-shadow 0.15s; box-shadow: var(--shadow);
         }
         .card:hover { border-color: var(--accent-border); box-shadow: 0 24px 48px -12px rgba(26, 26, 46, 0.15); }
 
-        /* ===== CHECKLIST ===== */
+        /* CHECKLIST */
         .checklist { display: flex; flex-direction: column; gap: 0.5rem; }
         .check-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.9rem;
-            padding: 0.8rem 1rem;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border-soft);
-            border-radius: var(--radius-sm);
-            border-left: 2px solid transparent;
-            cursor: pointer;
-            transition: all 0.15s;
-            user-select: none;
+            display: flex; align-items: flex-start; gap: 0.9rem; padding: 0.8rem 1rem;
+            background: var(--bg-elevated); border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm); border-left: 2px solid transparent;
+            cursor: pointer; transition: all 0.15s; user-select: none;
         }
         .check-item:hover { border-color: var(--accent-border); border-left-color: var(--accent); background: var(--ft-white); }
         .check-item.done { border-left-color: var(--green); background: var(--green-dim); }
         .check-item.done .checkbox { background: var(--green); border-color: var(--green); color: #fff; }
         .checkbox {
-            flex-shrink: 0;
-            width: 18px;
-            height: 18px;
-            border: 1.5px solid var(--border);
-            border-radius: 4px;
-            margin-top: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.6rem;
-            color: transparent;
-            transition: all 0.15s;
+            flex-shrink: 0; width: 18px; height: 18px; border: 1.5px solid var(--border);
+            border-radius: 4px; margin-top: 1px; display: flex; align-items: center;
+            justify-content: center; font-size: 0.6rem; color: transparent; transition: all 0.15s;
         }
         .check-info { flex: 1; }
         .check-title { font-weight: 500; font-size: 0.9rem; color: var(--text); }
         .check-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
         .check-link { font-size: 0.75rem; color: var(--accent); display: inline-block; margin-top: 0.2rem; }
         .check-tag {
-            flex-shrink: 0;
-            align-self: center;
-            font-size: 0.58rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.15rem 0.55rem;
-            border-radius: 8px;
+            flex-shrink: 0; align-self: center; font-size: 0.58rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.55rem; border-radius: 8px;
         }
         .tag-home { background: var(--gold-dim); color: var(--gold); }
         .tag-workshop { background: var(--accent-dim); color: var(--accent); }
         .tag-optional { background: rgba(107,125,153,0.1); color: var(--text-muted); }
 
-        /* ===== CODE BLOCKS ===== */
+        /* CODE BLOCKS */
         .code-wrap {
-            background: var(--bg-code);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            margin: 0.6rem 0;
-            position: relative;
-            overflow: hidden;
+            background: var(--bg-code); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); margin: 0.6rem 0; position: relative; overflow: hidden;
         }
-        .code-label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-dim);
-            padding: 0.4rem 1rem 0;
-            font-weight: 600;
-        }
+        .code-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); padding: 0.4rem 1rem 0; font-weight: 600; }
         .code-block {
-            padding: 0.7rem 1rem 0.9rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            line-height: 1.65;
-            color: var(--ft-navy);
-            white-space: pre-wrap;
-            word-break: break-word;
-            overflow-x: auto;
+            padding: 0.7rem 1rem 0.9rem; font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem; line-height: 1.65; color: var(--ft-navy);
+            white-space: pre-wrap; word-break: break-word; overflow-x: auto;
         }
         .code-block .hl { color: var(--accent); font-weight: 600; }
         .code-block .comment { color: var(--text-dim); font-style: italic; }
         .copy-btn {
-            position: absolute;
-            top: 0.4rem;
-            right: 0.4rem;
-            background: var(--border);
-            border: none;
-            color: var(--text-muted);
-            padding: 0.2rem 0.7rem;
-            border-radius: 4px;
-            font-size: 0.62rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.03em;
+            position: absolute; top: 0.4rem; right: 0.4rem; background: var(--border);
+            border: none; color: var(--text-muted); padding: 0.2rem 0.7rem; border-radius: 4px;
+            font-size: 0.62rem; font-weight: 600; cursor: pointer; transition: all 0.15s;
+            font-family: 'Inter', sans-serif; letter-spacing: 0.03em;
         }
         .copy-btn:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
         .copy-btn.copied { background: var(--green); color: #fff; }
 
-        /* ===== CONTEXT DIAGRAM ===== */
+        /* CONTEXT DIAGRAM */
         .context-diagram {
-            background: var(--bg-code);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.6rem 2rem;
-            margin: 1rem 0;
+            background: var(--bg-code); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 1.6rem 2rem; margin: 1rem 0;
         }
-        .diagram-flow {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .diagram-node {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .diagram-node .node-box {
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            border: 1px solid;
-            white-space: nowrap;
-        }
-        .diagram-node .node-label {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            flex: 1;
-        }
+        .diagram-flow { display: flex; flex-direction: column; gap: 0; max-width: 400px; margin: 0 auto; }
+        .diagram-node { display: flex; align-items: center; gap: 0.8rem; }
+        .diagram-node .node-box { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.82rem; font-weight: 500; border: 1px solid; white-space: nowrap; }
+        .diagram-node .node-label { font-size: 0.72rem; color: var(--text-muted); flex: 1; }
         .node-doc { background: var(--accent-dim); border-color: var(--accent-border); color: var(--ft-navy); }
         .node-bottleneck { background: var(--red-dim); border-color: rgba(225, 0, 15, 0.3); color: var(--red); }
         .node-window { background: var(--gold-dim); border-color: rgba(225, 0, 15, 0.3); color: var(--gold); }
         .node-model { background: var(--green-dim); border-color: rgba(45, 143, 92, 0.3); color: var(--green); }
         .node-answer { background: rgba(26, 26, 46, 0.04); border-color: var(--border); color: var(--text); }
-        .diagram-arrow {
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            padding: 0.1rem 0 0.1rem 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        .diagram-arrow { font-size: 0.75rem; color: var(--text-dim); padding: 0.1rem 0 0.1rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
         .diagram-arrow::before { content: '↓'; color: var(--border); }
 
-        /* ===== TWO TYPES ===== */
-        .two-types {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.8rem;
-            margin: 0.8rem 0;
-        }
-        .type-card {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 1.1rem 1.3rem;
-            transition: transform 0.15s, box-shadow 0.15s;
-        }
+        /* TWO TYPES */
+        .two-types { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.8rem 0; }
+        .type-card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.1rem 1.3rem; transition: transform 0.15s, box-shadow 0.15s; }
         .type-card:hover { transform: translateY(-2px); box-shadow: 0 8px 16px -8px rgba(0,0,0,0.05); }
         .type-card.type-self { border-color: var(--green-dim); border-bottom: 2px solid var(--green); }
         .type-card .type-num { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 0.3rem; }
@@ -409,84 +221,39 @@
         .type-card .type-items li { font-size: 0.78rem; color: var(--text-muted); padding: 0.15rem 0; display: flex; gap: 0.4rem; }
         .type-card .type-items li::before { content: '→'; color: var(--text-dim); flex-shrink: 0; }
 
-        /* ===== HIDDEN COST ===== */
-        .hidden-cost {
-            background: var(--red-dim);
-            border: 1px solid rgba(225, 0, 15, 0.2);
-            border-radius: var(--radius-sm);
-            padding: 1rem 1.3rem;
-            margin: 0.8rem 0;
-        }
+        /* HIDDEN COST */
+        .hidden-cost { background: var(--red-dim); border: 1px solid rgba(225, 0, 15, 0.2); border-radius: var(--radius-sm); padding: 1rem 1.3rem; margin: 0.8rem 0; }
         .hidden-cost .hc-title { font-size: 0.75rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
         .hidden-cost .hc-rule { font-size: 0.82rem; color: var(--text-muted); padding: 0.2rem 0; display: flex; align-items: baseline; gap: 0.5rem; }
         .hc-rule .r-icon { width: 1rem; flex-shrink: 0; }
         .r-danger { color: var(--red); }
         .r-safe { color: var(--green); }
 
-        /* ===== 11 LESSONS ===== */
-        .lessons-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-            margin: 0.8rem 0;
-        }
+        /* 11 LESSONS */
+        .lessons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0.8rem 0; }
         .lesson-card {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border-soft);
-            border-radius: var(--radius-sm);
-            padding: 0.75rem 1rem;
-            display: flex;
-            gap: 0.7rem;
-            align-items: flex-start;
+            background: var(--bg-elevated); border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm); padding: 0.75rem 1rem;
+            display: flex; gap: 0.7rem; align-items: flex-start;
             transition: border-color 0.15s, transform 0.15s;
         }
         .lesson-card:hover { border-color: var(--accent-border); transform: translateY(-1px); }
-        .lesson-num {
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--accent);
-            min-width: 1.4rem;
-            padding-top: 0.05rem;
-        }
+        .lesson-num { font-size: 0.65rem; font-weight: 700; color: var(--accent); min-width: 1.4rem; padding-top: 0.05rem; }
         .lesson-text { font-size: 0.82rem; line-height: 1.45; }
         .lesson-text strong { color: var(--text); display: block; margin-bottom: 0.1rem; }
         .lesson-text span { color: var(--text-muted); font-size: 0.75rem; }
-        .lesson-card.lesson-featured {
-            grid-column: 1 / -1;
-            border-color: rgba(225, 0, 15, 0.2);
-            background: var(--gold-dim);
-        }
+        .lesson-card.lesson-featured { grid-column: 1 / -1; border-color: rgba(225, 0, 15, 0.2); background: var(--gold-dim); }
         .lesson-card.lesson-featured .lesson-num { color: var(--gold); }
 
-        /* ===== PROMPTS ===== */
+        /* PROMPTS */
         .prompt-set { margin-bottom: 1.5rem; }
         .prompt-set-label {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-dim);
-            margin-bottom: 0.7rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+            color: var(--text-dim); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem;
         }
         .prompt-set-label::after { content: ''; flex: 1; height: 1px; background: var(--border-soft); }
-        .prompt-header {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.3rem;
-            flex-wrap: wrap;
-        }
-        .prompt-badge {
-            font-size: 0.6rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.15rem 0.6rem;
-            border-radius: 8px;
-        }
+        .prompt-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.3rem; flex-wrap: wrap; }
+        .prompt-badge { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.6rem; border-radius: 8px; }
         .pb-retrieval { background: var(--accent-dim); color: var(--accent); }
         .pb-synthesis { background: var(--gold-dim); color: var(--gold); }
         .pb-injection { background: var(--green-dim); color: var(--green); }
@@ -495,188 +262,71 @@
         .prompt-title { font-weight: 600; font-size: 0.88rem; }
         .prompt-meta { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.4rem; }
 
-        /* ===== STACK TABLE ===== */
+        /* STACK TABLE */
         .stack-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0.8rem 0; }
-        .stack-table th {
-            text-align: left;
-            padding: 0.4rem 0.7rem;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--text-dim);
-            font-weight: 600;
-            border-bottom: 1px solid var(--border);
-        }
-        .stack-table td {
-            padding: 0.5rem 0.7rem;
-            border-bottom: 1px solid var(--border-soft);
-            color: var(--text-muted);
-            vertical-align: top;
-        }
+        .stack-table th { text-align: left; padding: 0.4rem 0.7rem; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-dim); font-weight: 600; border-bottom: 1px solid var(--border); }
+        .stack-table td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--border-soft); color: var(--text-muted); vertical-align: top; }
         .stack-table td strong { color: var(--text); }
         .stack-table tr:last-child td { border-bottom: none; }
 
-        /* ===== RESOURCES ===== */
-        .resource-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-            margin: 0.8rem 0;
-        }
+        /* RESOURCES */
+        .resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0.8rem 0; }
         .resource-item {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border-soft);
-            border-radius: var(--radius-sm);
-            padding: 0.65rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.82rem;
-            transition: all 0.15s;
-            text-decoration: none;
-            color: var(--text);
+            background: var(--bg-elevated); border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm); padding: 0.65rem 1rem; display: flex;
+            align-items: center; gap: 0.6rem; font-size: 0.82rem; transition: all 0.15s;
+            text-decoration: none; color: var(--text);
         }
         .resource-item:hover { border-color: var(--accent-border); transform: translateX(2px); text-decoration: none; }
         .resource-item i { color: var(--accent); width: 1rem; text-align: center; flex-shrink: 0; }
         .resource-item .r-name { font-weight: 500; color: var(--text); }
         .resource-item .r-desc { color: var(--text-muted); font-size: 0.72rem; }
-        .resource-item .r-tag {
-            margin-left: auto;
-            font-size: 0.55rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            padding: 0.1rem 0.5rem;
-            border-radius: 6px;
-            flex-shrink: 0;
-        }
+        .resource-item .r-tag { margin-left: auto; font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.1rem 0.5rem; border-radius: 6px; flex-shrink: 0; }
         .rt-hosted { background: var(--accent-dim); color: var(--accent); }
         .rt-self { background: var(--green-dim); color: var(--green); }
         .rt-credit { background: var(--gold-dim); color: var(--gold); }
 
-        /* ===== VISUAL IMAGES ===== */
-        .visual-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            margin: 1rem 0;
-            box-shadow: var(--shadow);
-        }
-        .visual-card img {
-            width: 100%;
-            display: block;
-            opacity: 0.92;
-            transition: opacity 0.2s;
-        }
+        /* VISUAL IMAGES */
+        .visual-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 1rem 0; box-shadow: var(--shadow); }
+        .visual-card img { width: 100%; display: block; opacity: 0.92; transition: opacity 0.2s; }
         .visual-card:hover img { opacity: 1; }
-        .visual-caption {
-            padding: 0.7rem 1.2rem;
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--ft-white);
-        }
+        .visual-caption { padding: 0.7rem 1.2rem; font-size: 0.75rem; color: var(--text-dim); border-top: 1px solid var(--border); display: flex; align-items: center; gap: 0.5rem; background: var(--ft-white); }
         .visual-caption i { color: var(--accent); }
 
-        /* ===== HARDWARE TABLE ===== */
+        /* HARDWARE TABLE */
         .hw-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 0.8rem 0; }
-        .hw-table th {
-            text-align: left;
-            padding: 0.4rem 0.7rem;
-            font-size: 0.62rem;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--text-dim);
-            font-weight: 600;
-            border-bottom: 1px solid var(--border);
-        }
-        .hw-table td {
-            padding: 0.5rem 0.7rem;
-            border-bottom: 1px solid var(--border-soft);
-            color: var(--text-muted);
-            font-size: 0.78rem;
-        }
+        .hw-table th { text-align: left; padding: 0.4rem 0.7rem; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-dim); font-weight: 600; border-bottom: 1px solid var(--border); }
+        .hw-table td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--border-soft); color: var(--text-muted); font-size: 0.78rem; }
         .hw-table tr:last-child td { border-bottom: none; }
         .badge-ok { color: var(--green); font-weight: 600; }
         .badge-no { color: var(--red); font-weight: 600; }
 
-        /* ===== TIMELINE ===== */
+        /* TIMELINE */
         .timeline { display: flex; flex-direction: column; gap: 0; margin: 0.8rem 0; position: relative; padding-left: 1.5rem; }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 4px;
-            top: 0.5rem;
-            bottom: 0.5rem;
-            width: 2px;
-            background: var(--border);
-        }
-        .tl-item {
-            display: flex;
-            gap: 1rem;
-            padding: 0.5rem 0;
-            align-items: flex-start;
-            position: relative;
-        }
-        .tl-item::before {
-            content: '';
-            position: absolute;
-            left: -1.5rem;
-            top: 0.9rem;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent);
-            border: 2px solid var(--ft-white);
-        }
-        .tl-time {
-            font-size: 0.72rem;
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--accent);
-            min-width: 3rem;
-            padding-top: 0.1rem;
-            flex-shrink: 0;
-        }
+        .timeline::before { content: ''; position: absolute; left: 4px; top: 0.5rem; bottom: 0.5rem; width: 2px; background: var(--border); }
+        .tl-item { display: flex; gap: 1rem; padding: 0.5rem 0; align-items: flex-start; position: relative; }
+        .tl-item::before { content: ''; position: absolute; left: -1.5rem; top: 0.9rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--ft-white); }
+        .tl-time { font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; color: var(--accent); min-width: 3rem; padding-top: 0.1rem; flex-shrink: 0; }
         .tl-content { flex: 1; }
         .tl-title { font-size: 0.88rem; font-weight: 600; color: var(--text); }
         .tl-desc { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.05rem; }
 
-        /* ===== SEPARATOR ===== */
+        /* SEPARATOR */
         .sep { height: 1px; background: var(--border); margin: 2.5rem 0; }
 
-        /* ===== FOOTER ===== */
-        .footer {
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
-            margin-top: 3rem;
-            text-align: center;
-        }
+        /* FOOTER */
+        .footer { padding: 2rem 0; border-top: 1px solid var(--border); margin-top: 3rem; text-align: center; }
         .footer .footer-title { font-size: 1.2rem; font-weight: 700; color: var(--ft-navy); margin-bottom: 0.3rem; }
         .footer p { font-size: 0.82rem; color: var(--text-dim); }
-        .footer .ft-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--ft-white);
-            font-size: 0.65rem;
-            font-weight: 600;
-            padding: 0.2rem 1rem;
-            border-radius: 20px;
-            letter-spacing: 0.05em;
-            margin-top: 0.5rem;
-        }
+        .footer .ft-badge { display: inline-block; background: var(--accent); color: var(--ft-white); font-size: 0.65rem; font-weight: 600; padding: 0.2rem 1rem; border-radius: 20px; letter-spacing: 0.05em; margin-top: 0.5rem; }
 
-        /* ===== RESPONSIVE ===== */
+        /* RESPONSIVE */
         @media (max-width: 640px) {
             .two-types, .lessons-grid, .resource-grid { grid-template-columns: 1fr; }
             .lesson-card.lesson-featured { grid-column: 1; }
             body { font-size: 14px; }
             .container { padding: 0 8px; }
             .hero { padding: 2rem 0 1.5rem; }
-            .brand-card { padding: 1.5rem; }
             .timeline { padding-left: 1rem; }
             .tl-item::before { left: -1rem; }
         }
@@ -687,71 +337,37 @@
             .card { padding: 1rem; }
         }
 
-        /* ===== COLLAPSIBLE SECTIONS ===== */
-        .collapsible-section {
-            border: none;
-            margin-bottom: 1.5rem;
-        }
+        /* COLLAPSIBLE SECTIONS */
+        .collapsible-section { border: none; margin-bottom: 1.5rem; }
         .collapsible-section .section-header {
-            cursor: pointer;
-            user-select: none;
-            margin-bottom: 0.5rem;
-            padding: 0.5rem 0.2rem;
-            border-radius: var(--radius-sm);
-            transition: background 0.15s;
-            display: flex;
-            align-items: center;
+            cursor: pointer; user-select: none; margin-bottom: 0.5rem; padding: 0.5rem 0.2rem;
+            border-radius: var(--radius-sm); transition: background 0.15s; display: flex; align-items: center;
         }
-        .collapsible-section .section-header:hover {
-            background: var(--bg-elevated);
-        }
-        .collapsible-section .section-header .toggle-icon {
-            margin-left: auto;
-            font-size: 1rem;
-            color: var(--text-muted);
-            transition: transform 0.25s ease;
-        }
-        .collapsible-section .section-header .toggle-icon i {
-            transition: transform 0.25s ease;
-        }
+        .collapsible-section .section-header:hover { background: var(--bg-elevated); }
+        .collapsible-section .section-header .toggle-icon { margin-left: auto; font-size: 1rem; color: var(--text-muted); transition: transform 0.25s ease; }
+        .collapsible-section .section-header .toggle-icon i { transition: transform 0.25s ease; }
         .collapsible-section .section-content {
-            overflow: hidden;
-            transition: max-height 0.35s ease-in-out, opacity 0.25s ease, margin 0.2s ease;
-            max-height: 0;
-            opacity: 0;
-            margin-top: 0;
+            overflow: hidden; transition: max-height 0.35s ease-in-out, opacity 0.25s ease, margin 0.2s ease;
+            max-height: 0; opacity: 0; margin-top: 0;
         }
-        .collapsible-section .section-content.open {
-            max-height: 5000px;
-            opacity: 1;
-            margin-top: 1rem;
-        }
-        .collapsible-section .section-content .card:first-child {
-            margin-top: 0;
-        }
-        .master-q, .nav-pills {
-            transition: none;
-        }
-        .collapsible-section .section-content .visual-card {
-            margin-top: 1rem;
-        }
-        .collapsible-section .section-content .visual-card:first-child {
-            margin-top: 0;
-        }
+        .collapsible-section .section-content.open { max-height: 5000px; opacity: 1; margin-top: 1rem; }
+        .collapsible-section .section-content .card:first-child { margin-top: 0; }
+        .master-q, .nav-pills { transition: none; }
+        .collapsible-section .section-content .visual-card { margin-top: 1rem; }
+        .collapsible-section .section-content .visual-card:first-child { margin-top: 0; }
+
+        /* LESSONS ALWAYS VISIBLE — no collapsible override needed, section-content.open is set in HTML */
     </style>
 </head>
 <body>
 <div class="container">
 
-<!-- ===== HERO WITH LOGO SIDE-BY-SIDE ===== -->
+<!-- HERO -->
 <div class="hero">
     <div class="hero-logo-title">
-        <!-- Left: Logo -->
         <div class="hero-logo">
             <img src="images/Logo_FT_Bangkok_FondBlanc.png" alt="La French Tech Bangkok" />
         </div>
-        
-        <!-- Right: Title Content -->
         <div class="hero-content">
             <div class="hero-eyebrow">
                 <i class="fa-regular fa-calendar"></i> July 15, 2026 at 6:00 PM
@@ -771,372 +387,334 @@
     </div>
 </div>
 
-    <!-- ===== NAV ===== -->
-    <div class="nav-pills">
-        <a class="nav-pill" href="#setup">Setup</a>
-        <a class="nav-pill" href="#context">What the model sees</a>
-        <a class="nav-pill" href="#two-types">Free AI explained</a>
-        <a class="nav-pill" href="#lessons">11 Lessons</a>
-        <a class="nav-pill" href="#prompts">Workshop prompts</a>
-        <a class="nav-pill" href="#stack">Stack</a>
-        <a class="nav-pill" href="#resources">Free resources</a>
-    </div>
+<!-- NAV -->
+<div class="nav-pills">
+    <a class="nav-pill" href="#setup">Setup</a>
+    <a class="nav-pill" href="#context">What the model sees</a>
+    <a class="nav-pill" href="#two-types">Free AI explained</a>
+    <a class="nav-pill" href="#lessons">11 Lessons</a>
+    <a class="nav-pill" href="#prompts">Workshop prompts</a>
+    <a class="nav-pill" href="#stack">Stack</a>
+    <a class="nav-pill" href="#resources">Free resources</a>
+</div>
 
-    <!-- ===== MASTER QUESTION ===== -->
-    <div class="master-q">
-        <div class="eyebrow"><i class="fa-solid fa-circle-question"></i> The master question</div>
-        <div class="q">
-            <i class="fa-solid fa-quote-left"></i>What information was actually available to the model<br>at the moment it generated this answer?
-        </div>
+<!-- MASTER QUESTION — IMPROVED -->
+<div class="master-q">
+    <div class="eyebrow"><i class="fa-solid fa-circle-question"></i> The master question</div>
+    <div class="q">
+        <i class="fa-solid fa-quote-left"></i>What did the model actually read?
     </div>
+    <div class="q-sub">
+        Ask this of every AI system you will ever use — ChatGPT, Copilot, Claude, your own local model.<br>
+        It reveals more about why AI fails than any benchmark ever will.
+    </div>
+</div>
 
-    <!-- ===== SETUP (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="setup">
-        <div class="section-header" onclick="toggleSection(this)">
-            <i class="fa-solid fa-circle-check"></i>
-            <h2>Pre-workshop setup</h2>
-            <span class="count">Do this at home · 3 days before</span>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="card">
-                <div class="checklist">
-                    <div class="check-item" onclick="this.classList.toggle('done')">
-                        <div class="checkbox"><i class="fa-solid fa-check"></i></div>
-                        <div class="check-info">
-                            <div class="check-title">Install LM Studio</div>
-                            <div class="check-desc">Desktop GUI for running local models. No terminal required.</div>
-                            <a class="check-link" href="https://lmstudio.ai" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> lmstudio.ai</a>
-                        </div>
-                        <span class="check-tag tag-home">At home</span>
+<!-- SETUP (collapsible, collapsed by default) -->
+<div class="collapsible-section" id="setup">
+    <div class="section-header" onclick="toggleSection(this)">
+        <i class="fa-solid fa-circle-check"></i>
+        <h2>Pre-workshop setup</h2>
+        <span class="count">Do this at home · 3 days before</span>
+        <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+    <div class="section-content">
+        <div class="card">
+            <div class="checklist">
+                <div class="check-item">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Install LM Studio</div>
+                        <div class="check-desc">Desktop GUI for running local models. No terminal required.</div>
+                        <a class="check-link" href="https://lmstudio.ai" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> lmstudio.ai</a>
                     </div>
-
-                    <div class="check-item" onclick="this.classList.toggle('done')">
-                        <div class="checkbox"><i class="fa-solid fa-check"></i></div>
-                        <div class="check-info">
-                            <div class="check-title">Download Phi-4 Mini (2.3 GB)</div>
-                            <div class="check-desc">In LM Studio → Search icon → search below → download Q4_K_M file</div>
-                            <div class="code-wrap" style="margin-top:0.5rem">
-                                <div class="code-block"><span class="hl">microsoft/phi-4-mini-instruct-GGUF</span>
+                    <span class="check-tag tag-home">At home</span>
+                </div>
+                <div class="check-item">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Download Phi-4 Mini (2.3 GB)</div>
+                        <div class="check-desc">In LM Studio → Search icon → search below → download Q4_K_M file</div>
+                        <div class="code-wrap" style="margin-top:0.5rem">
+                            <div class="code-block"><span class="hl">microsoft/phi-4-mini-instruct-GGUF</span>
 File to select: phi-4-mini-instruct-Q4_K_M.gguf</div>
-                                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                            </div>
+                            <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                         </div>
-                        <span class="check-tag tag-home">2.3 GB</span>
                     </div>
-
-                    <div class="check-item" onclick="this.classList.toggle('done')">
-                        <div class="checkbox"><i class="fa-solid fa-check"></i></div>
-                        <div class="check-info">
-                            <div class="check-title">Test the model</div>
-                            <div class="check-desc">LM Studio → Chat tab → select model → type this → expect a response in 15–20 sec</div>
-                            <div class="code-wrap" style="margin-top:0.5rem">
-                                <div class="code-block"><span class="hl">Say "ready" if you are working.</span></div>
-                                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                            </div>
+                    <span class="check-tag tag-home">2.3 GB</span>
+                </div>
+                <div class="check-item">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Test the model</div>
+                        <div class="check-desc">LM Studio → Chat tab → select model → type this → expect a response in 15–20 sec</div>
+                        <div class="code-wrap" style="margin-top:0.5rem">
+                            <div class="code-block"><span class="hl">Say "ready" if you are working.</span></div>
+                            <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                         </div>
-                        <span class="check-tag tag-home">Verify</span>
                     </div>
-
-                    <div class="check-item" onclick="this.classList.toggle('done')">
-                        <div class="checkbox"><i class="fa-solid fa-check"></i></div>
-                        <div class="check-info">
-                            <div class="check-title">Prepare 3–5 business documents</div>
-                            <div class="check-desc">Strategy notes, project briefs, meeting transcripts, client notes. PDF, Word, or text. Put them in one folder you can find quickly.</div>
-                        </div>
-                        <span class="check-tag tag-workshop">Bring</span>
+                    <span class="check-tag tag-home">Verify</span>
+                </div>
+                <div class="check-item">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Prepare 3–5 business documents</div>
+                        <div class="check-desc">Strategy notes, project briefs, meeting transcripts, client notes. PDF, Word, or text. Put them in one folder you can find quickly.</div>
                     </div>
-
-                    <div class="check-item" onclick="this.classList.toggle('done')">
-                        <div class="checkbox"><i class="fa-solid fa-check"></i></div>
-                        <div class="check-info">
-                            <div class="check-title">Optional: Coding demo setup</div>
-                            <div class="check-desc">Install Ollama + VS Code + Ollama Code extension for the free local Copilot demo</div>
-                            <div class="code-wrap" style="margin-top:0.5rem">
-                                <div class="code-block"><span class="comment"># 1. Install Ollama from ollama.com
+                    <span class="check-tag tag-workshop">Bring</span>
+                </div>
+                <div class="check-item">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Optional: Coding demo setup</div>
+                        <div class="check-desc">Install Ollama + VS Code + Ollama Code extension for the free local Copilot demo</div>
+                        <div class="code-wrap" style="margin-top:0.5rem">
+                            <div class="code-block"><span class="comment"># 1. Install Ollama from ollama.com
 # 2. Open Command Prompt and run:</span>
 <span class="hl">ollama pull qwen2.5-coder:1.5b</span>
 <span class="comment"># 3. Install VS Code from code.visualstudio.com
 # 4. VS Code → Ctrl+Shift+X → search "Ollama Code" (publisher: cgaspard) → install</span></div>
-                                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                            </div>
+                            <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                         </div>
-                        <span class="check-tag tag-optional">Optional</span>
+                    </div>
+                    <span class="check-tag tag-optional">Optional</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTEXT DIAGRAM (collapsible, collapsed by default) -->
+<div class="collapsible-section" id="context">
+    <div class="section-header" onclick="toggleSection(this)">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <h2>What the model actually sees</h2>
+        <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+    <div class="section-content">
+        <div class="card">
+            <p style="margin-bottom:1.2rem">The most dangerous assumption you can bring to any AI system:</p>
+            <div style="background:var(--red-dim);border:1px solid rgba(225,0,15,0.2);border-radius:6px;padding:0.8rem 1.2rem;margin-bottom:1.2rem;font-weight:600;color:var(--red);font-size:0.9rem">
+                <i class="fa-solid fa-xmark" style="margin-right:0.5rem"></i>"When I upload a document, the model reads it."
+            </div>
+            <p style="margin-bottom:1.4rem">It does not. There is always a bottleneck between your document and the model.</p>
+            <div class="context-diagram">
+                <div class="diagram-flow">
+                    <div class="diagram-node">
+                        <div class="node-box node-doc"><i class="fa-regular fa-file-lines" style="margin-right:0.4rem"></i>Your document</div>
+                        <span class="node-label">501 pages · ~200k tokens</span>
+                    </div>
+                    <div class="diagram-arrow">context window limit · chunk selection · truncation · retrieval quality</div>
+                    <div class="diagram-node">
+                        <div class="node-box node-bottleneck"><i class="fa-solid fa-filter" style="margin-right:0.4rem"></i>Selection bottleneck</div>
+                        <span class="node-label" style="color:var(--red);font-weight:500">← most AI failures happen here</span>
+                    </div>
+                    <div class="diagram-arrow">only what fits passes through</div>
+                    <div class="diagram-node">
+                        <div class="node-box node-window"><i class="fa-solid fa-window-maximize" style="margin-right:0.4rem"></i>Context window</div>
+                        <span class="node-label">8%–16% of a 500-page doc</span>
+                    </div>
+                    <div class="diagram-arrow">only this reaches the model</div>
+                    <div class="diagram-node">
+                        <div class="node-box node-model"><i class="fa-solid fa-microchip" style="margin-right:0.4rem"></i>Phi-4 Mini — in your RAM</div>
+                        <span class="node-label">no internet · no cloud</span>
+                    </div>
+                    <div class="diagram-arrow">answer constrained by what was in the window</div>
+                    <div class="diagram-node">
+                        <div class="node-box node-answer"><i class="fa-regular fa-comment" style="margin-right:0.4rem"></i>Answer</div>
+                        <span class="node-label">not by what was in the document</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visual-card">
+            <img src="images/image-97.png" alt="Context window as working memory — Daily Dose of Data Science" onerror="this.parentElement.style.display='none'" />
+            <div class="visual-caption"><i class="fa-solid fa-lightbulb"></i> The context window is working memory. The core job: maximize signal under strict capacity constraints. — Daily Dose of Data Science, LLMOps Part 8</div>
+        </div>
+        <div class="visual-card" style="margin-top:0.8rem">
+            <img src="images/image-98.png" alt="Context types taxonomy — Daily Dose of Data Science" onerror="this.parentElement.style.display='none'" />
+            <div class="visual-caption"><i class="fa-solid fa-sitemap"></i> A practical taxonomy of context types: instruction, query, knowledge (RAG), memory, tool, user-specific, environmental. — Daily Dose of Data Science</div>
+        </div>
+    </div>
+</div>
+
+<!-- TWO TYPES (collapsible, collapsed by default) -->
+<div class="collapsible-section" id="two-types">
+    <div class="section-header" onclick="toggleSection(this)">
+        <i class="fa-solid fa-code-branch"></i>
+        <h2>The two types of "free" AI</h2>
+        <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+    <div class="section-content">
+        <div class="card">
+            <p style="margin-bottom:1rem">Most people assume "free AI" means one thing. It does not. These are opposites.</p>
+            <div class="two-types">
+                <div class="type-card type-hosted">
+                    <div class="type-num">Type 1 · Someone else runs it</div>
+                    <div class="type-title">Hosted — You Call It</div>
+                    <ul class="type-items">
+                        <li>Google AI Studio, Groq, Mistral, OpenRouter</li>
+                        <li>Real frontier models with rate limits</li>
+                        <li>You give up your prompts — free tiers often train on what you send</li>
+                        <li>Convenient. Not private.</li>
+                    </ul>
+                </div>
+                <div class="type-card type-self">
+                    <div class="type-num">Type 2 · You download and run it</div>
+                    <div class="type-title">Self-hosted — What We Build Today</div>
+                    <ul class="type-items">
+                        <li>Fully private. Nothing leaves your machine.</li>
+                        <li>You pay in electricity and RAM, not data or dollars</li>
+                        <li>Model is a file on your disk — it never changes</li>
+                        <li>Deterministic. Versioned. Reproducible.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hidden-cost">
+                <div class="hc-title"><i class="fa-solid fa-skull-crossbones" style="margin-right:0.4rem"></i>The hidden cost of free hosted tiers</div>
+                <div class="hc-rule"><span class="r-icon r-danger"><i class="fa-solid fa-xmark"></i></span>Free hosted API = assume your prompts are training data</div>
+                <div class="hc-rule"><span class="r-icon r-danger"><i class="fa-solid fa-xmark"></i></span>Your code, business logic, and client data may end up in someone's next training run</div>
+                <div class="hc-rule"><span class="r-icon r-safe"><i class="fa-solid fa-check"></i></span>Self-hosted = 100% private by definition</div>
+                <div class="hc-rule"><span class="r-icon r-safe"><i class="fa-solid fa-check"></i></span>If it contains client data or credentials — self-host or pay for a privacy tier</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI BUILDING BLOCKS (always visible) -->
+<div class="section-header" style="margin-top:2.5rem">
+    <i class="fa-solid fa-brain"></i>
+    <h2>AI building blocks — a human analogy</h2>
+</div>
+<div class="visual-card">
+    <img src="images/LLMtypes.jpg" alt="AI Systems: A Human Analogy — LLM Brain, RAG Brain+Books, MCP Connector, AI Agent Brain+Hands" />
+    <div class="visual-caption"><i class="fa-solid fa-sitemap"></i> LLM = Brain · RAG = Brain + Books · MCP = Standard Connector · AI Agent = Brain + Hands. These are connected building blocks that can work together in one AI system.</div>
+</div>
+
+<!-- 11 LESSONS — OPEN BY DEFAULT -->
+<div class="collapsible-section" id="lessons">
+    <div class="section-header" onclick="toggleSection(this)">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h2>The 11 universal lessons of context</h2>
+        <span class="count">Apply to every LLM ever built</span>
+        <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+    </div>
+    <div class="section-content open">
+        <div class="card">
+            <p style="margin-bottom:1rem">These lessons do not change when you switch from Phi-4 Mini to ChatGPT, Copilot, or Claude. They are not lessons about local models. They are lessons about how language models process context.</p>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-num">01</div>
+                    <div class="lesson-text">
+                        <strong>The window is not the document</strong>
+                        <span>The model sees a slice. Not the whole. Never the whole.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">02</div>
+                    <div class="lesson-text">
+                        <strong>Gaps fill with training data</strong>
+                        <span>When context is thin, the model invents plausible content. Confidently.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">03</div>
+                    <div class="lesson-text">
+                        <strong>Synthesis requires co-presence</strong>
+                        <span>Connecting two sections requires both to be in the same window at the same time.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">04</div>
+                    <div class="lesson-text">
+                        <strong>Chunk boundaries break reasoning</strong>
+                        <span>Information split across chunks cannot be reliably recombined by the model.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">05</div>
+                    <div class="lesson-text">
+                        <strong>Truncation is invisible</strong>
+                        <span>The model does not say "I only read 10% of your document." It just answers.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">06</div>
+                    <div class="lesson-text">
+                        <strong>Position matters</strong>
+                        <span>Content at the start and end of the window is recalled better than content in the middle.</span>
+                    </div>
+                </div>
+                <div class="lesson-card lesson-featured">
+                    <div class="lesson-num">07</div>
+                    <div class="lesson-text">
+                        <strong>Confidence is not accuracy</strong>
+                        <span>The model answers with the same confidence whether it saw the answer or invented it. This is the most dangerous lesson.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">08</div>
+                    <div class="lesson-text">
+                        <strong>You can engineer the context</strong>
+                        <span>Pasting text directly into the prompt is more reliable than attaching a file.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">09</div>
+                    <div class="lesson-text">
+                        <strong>Explicit grounding beats implicit retrieval</strong>
+                        <span>Telling the model exactly what section to use produces better answers than letting it choose.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">10</div>
+                    <div class="lesson-text">
+                        <strong>Multi-document context degrades rapidly</strong>
+                        <span>Each document you add shrinks the window available for each one.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">11</div>
+                    <div class="lesson-text">
+                        <strong>Document identity is not automatic</strong>
+                        <span>The model does not reliably know which document it is reading from. You must tell it explicitly.</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ===== CONTEXT DIAGRAM (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="context">
-        <div class="section-header" onclick="toggleSection(this)">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            <h2>What the model actually sees</h2>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="card">
-                <p style="margin-bottom:1.2rem">The most dangerous assumption you can bring to any AI system:</p>
-                <div style="background:var(--red-dim);border:1px solid rgba(225,0,15,0.2);border-radius:6px;padding:0.8rem 1.2rem;margin-bottom:1.2rem;font-weight:600;color:var(--red);font-size:0.9rem">
-                    <i class="fa-solid fa-xmark" style="margin-right:0.5rem"></i>"When I upload a document, the model reads it."
-                </div>
-                <p style="margin-bottom:1.4rem">It does not. There is always a bottleneck between your document and the model.</p>
+<!-- RAG PIPELINE IMAGES (always visible) -->
+<div class="visual-card" style="margin-top:1rem">
+    <img src="images/image-101.png" alt="Chunking strategies for RAG — Daily Dose of Data Science" onerror="this.parentElement.style.display='none'" />
+    <div class="visual-caption"><i class="fa-solid fa-scissors"></i> Chunking is a core design decision. For summarization workloads, coverage replaces relevance as the optimization goal. — Daily Dose of Data Science, LLMOps Part 8</div>
+</div>
+<div class="visual-card" style="margin-top:0.8rem">
+    <img src="images/image-102.png" alt="Retrieval stack: vector search, precision vs recall — Daily Dose of Data Science" onerror="this.parentElement.style.display='none'" />
+    <div class="visual-caption"><i class="fa-solid fa-magnifying-glass"></i> The standard retrieval stack: vector search as candidate generator, tuning precision vs. recall, contextual retrieval. — Daily Dose of Data Science</div>
+</div>
 
-                <div class="context-diagram">
-                    <div class="diagram-flow">
-                        <div class="diagram-node">
-                            <div class="node-box node-doc"><i class="fa-regular fa-file-lines" style="margin-right:0.4rem"></i>Your document</div>
-                            <span class="node-label">501 pages · ~200k tokens</span>
-                        </div>
-                        <div class="diagram-arrow">context window limit · chunk selection · truncation · retrieval quality</div>
-                        <div class="diagram-node">
-                            <div class="node-box node-bottleneck"><i class="fa-solid fa-filter" style="margin-right:0.4rem"></i>Selection bottleneck</div>
-                            <span class="node-label" style="color:var(--red);font-weight:500">← most AI failures happen here</span>
-                        </div>
-                        <div class="diagram-arrow">only what fits passes through</div>
-                        <div class="diagram-node">
-                            <div class="node-box node-window"><i class="fa-solid fa-window-maximize" style="margin-right:0.4rem"></i>Context window</div>
-                            <span class="node-label">8%–16% of a 500-page doc</span>
-                        </div>
-                        <div class="diagram-arrow">only this reaches the model</div>
-                        <div class="diagram-node">
-                            <div class="node-box node-model"><i class="fa-solid fa-microchip" style="margin-right:0.4rem"></i>Phi-4 Mini — in your RAM</div>
-                            <span class="node-label">no internet · no cloud</span>
-                        </div>
-                        <div class="diagram-arrow">answer constrained by what was in the window</div>
-                        <div class="diagram-node">
-                            <div class="node-box node-answer"><i class="fa-regular fa-comment" style="margin-right:0.4rem"></i>Answer</div>
-                            <span class="node-label">not by what was in the document</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Context engineering image -->
-            <div class="visual-card">
-                <img src="images/image-97.png"
-                     alt="Context window as working memory — Daily Dose of Data Science"
-                     onerror="this.parentElement.style.display='none'" />
-                <div class="visual-caption">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    The context window is working memory. The core job: maximize signal under strict capacity constraints. — Daily Dose of Data Science, LLMOps Part 8
-                </div>
-            </div>
-
-            <div class="visual-card" style="margin-top:0.8rem">
-                <img src="images/image-98.png"
-                     alt="Context types taxonomy — Daily Dose of Data Science"
-                     onerror="this.parentElement.style.display='none'" />
-                <div class="visual-caption">
-                    <i class="fa-solid fa-sitemap"></i>
-                    A practical taxonomy of context types: instruction, query, knowledge (RAG), memory, tool, user-specific, environmental. — Daily Dose of Data Science
-                </div>
-            </div>
-        </div>
+<!-- WORKSHOP PROMPTS (collapsible, collapsed by default) -->
+<div class="collapsible-section" id="prompts">
+    <div class="section-header" onclick="toggleSection(this)">
+        <i class="fa-solid fa-terminal"></i>
+        <h2>Workshop prompts</h2>
+        <span class="count">Copy · paste · run</span>
+        <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
     </div>
-
-    <!-- ===== TWO TYPES OF FREE (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="two-types">
-        <div class="section-header" onclick="toggleSection(this)">
-            <i class="fa-solid fa-code-branch"></i>
-            <h2>The two types of "free" AI</h2>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="card">
-                <p style="margin-bottom:1rem">Most people assume "free AI" means one thing. It does not. These are opposites.</p>
-
-                <div class="two-types">
-                    <div class="type-card type-hosted">
-                        <div class="type-num">Type 1 · Someone else runs it</div>
-                        <div class="type-title">Hosted — You Call It</div>
-                        <ul class="type-items">
-                            <li>Google AI Studio, Groq, Mistral, OpenRouter</li>
-                            <li>Real frontier models with rate limits</li>
-                            <li>You give up your prompts — free tiers often train on what you send</li>
-                            <li>Convenient. Not private.</li>
-                        </ul>
-                    </div>
-                    <div class="type-card type-self">
-                        <div class="type-num">Type 2 · You download and run it</div>
-                        <div class="type-title">Self-hosted — What We Build Today</div>
-                        <ul class="type-items">
-                            <li>Fully private. Nothing leaves your machine.</li>
-                            <li>You pay in electricity and RAM, not data or dollars</li>
-                            <li>Model is a file on your disk — it never changes</li>
-                            <li>Deterministic. Versioned. Reproducible.</li>
-                        </ul>
-                    </div>
+    <div class="section-content">
+        <!-- SECRET DOCS DEMO -->
+        <div class="prompt-set">
+            <div class="prompt-set-label">SECRET DOCS demo — facilitator runs these</div>
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-retrieval">Factual retrieval</span>
+                    <span class="prompt-title">Cyberspace Layers — AJP-3.20</span>
                 </div>
-
-                <div class="hidden-cost">
-                    <div class="hc-title"><i class="fa-solid fa-skull-crossbones" style="margin-right:0.4rem"></i>The hidden cost of free hosted tiers</div>
-                    <div class="hc-rule"><span class="r-icon r-danger"><i class="fa-solid fa-xmark"></i></span>Free hosted API = assume your prompts are training data</div>
-                    <div class="hc-rule"><span class="r-icon r-danger"><i class="fa-solid fa-xmark"></i></span>Your code, business logic, and client data may end up in someone's next training run</div>
-                    <div class="hc-rule"><span class="r-icon r-safe"><i class="fa-solid fa-check"></i></span>Self-hosted = 100% private by definition</div>
-                    <div class="hc-rule"><span class="r-icon r-safe"><i class="fa-solid fa-check"></i></span>If it contains client data or credentials — self-host or pay for a privacy tier</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== AI SYSTEMS VISUAL (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="ai-analogy">
-        <div class="section-header" onclick="toggleSection(this)" style="margin-top:2.5rem">
-            <i class="fa-solid fa-brain"></i>
-            <h2>AI building blocks — a human analogy</h2>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="visual-card">
-                <img src="images/LLMtypes.jpg"
-                     alt="AI Systems: A Human Analogy — LLM Brain, RAG Brain+Books, MCP Connector, AI Agent Brain+Hands" />
-                <div class="visual-caption">
-                    <i class="fa-solid fa-sitemap"></i>
-                    LLM = Brain · RAG = Brain + Books · MCP = Standard Connector · AI Agent = Brain + Hands. These are connected building blocks that can work together in one AI system.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== 11 LESSONS (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="lessons">
-        <div class="section-header" onclick="toggleSection(this)">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <h2>The 11 universal lessons of context</h2>
-            <span class="count">Apply to every LLM ever built</span>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="card">
-                <p style="margin-bottom:1rem">These lessons do not change when you switch from Phi-4 Mini to ChatGPT, Copilot, or Claude. They are not lessons about local models. They are lessons about how language models process context.</p>
-
-                <div class="lessons-grid">
-                    <div class="lesson-card">
-                        <div class="lesson-num">01</div>
-                        <div class="lesson-text">
-                            <strong>The window is not the document</strong>
-                            <span>The model sees a slice. Not the whole. Never the whole.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">02</div>
-                        <div class="lesson-text">
-                            <strong>Gaps fill with training data</strong>
-                            <span>When context is thin, the model invents plausible content. Confidently.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">03</div>
-                        <div class="lesson-text">
-                            <strong>Synthesis requires co-presence</strong>
-                            <span>Connecting two sections requires both to be in the same window at the same time.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">04</div>
-                        <div class="lesson-text">
-                            <strong>Chunk boundaries break reasoning</strong>
-                            <span>Information split across chunks cannot be reliably recombined by the model.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">05</div>
-                        <div class="lesson-text">
-                            <strong>Truncation is invisible</strong>
-                            <span>The model does not say "I only read 10% of your document." It just answers.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">06</div>
-                        <div class="lesson-text">
-                            <strong>Position matters</strong>
-                            <span>Content at the start and end of the window is recalled better than content in the middle.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card lesson-featured">
-                        <div class="lesson-num">07</div>
-                        <div class="lesson-text">
-                            <strong>Confidence is not accuracy</strong>
-                            <span>The model answers with the same confidence whether it saw the answer or invented it. This is the most dangerous lesson.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">08</div>
-                        <div class="lesson-text">
-                            <strong>You can engineer the context</strong>
-                            <span>Pasting text directly into the prompt is more reliable than attaching a file.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">09</div>
-                        <div class="lesson-text">
-                            <strong>Explicit grounding beats implicit retrieval</strong>
-                            <span>Telling the model exactly what section to use produces better answers than letting it choose.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">10</div>
-                        <div class="lesson-text">
-                            <strong>Multi-document context degrades rapidly</strong>
-                            <span>Each document you add shrinks the window available for each one.</span>
-                        </div>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-num">11</div>
-                        <div class="lesson-text">
-                            <strong>Document identity is not automatic</strong>
-                            <span>The model does not reliably know which document it is reading from. You must tell it explicitly.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RAG PIPELINE IMAGES — now inside the lessons collapsible -->
-            <div class="visual-card" style="margin-top:1rem">
-                <img src="images/image-101.png"
-                     alt="Chunking strategies for RAG — Daily Dose of Data Science"
-                     onerror="this.parentElement.style.display='none'" />
-                <div class="visual-caption">
-                    <i class="fa-solid fa-scissors"></i>
-                    Chunking is a core design decision. For summarization workloads, coverage replaces relevance as the optimization goal. — Daily Dose of Data Science, LLMOps Part 8
-                </div>
-            </div>
-
-            <div class="visual-card" style="margin-top:0.8rem">
-                <img src="images/image-102.png"
-                     alt="Retrieval stack: vector search, precision vs recall — Daily Dose of Data Science"
-                     onerror="this.parentElement.style.display='none'" />
-                <div class="visual-caption">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    The standard retrieval stack: vector search as candidate generator, tuning precision vs. recall, contextual retrieval. — Daily Dose of Data Science
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== WORKSHOP PROMPTS (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="prompts">
-        <div class="section-header" onclick="toggleSection(this)">
-            <i class="fa-solid fa-terminal"></i>
-            <h2>Workshop prompts</h2>
-            <span class="count">Copy · paste · run</span>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <!-- SECRET DOCS DEMO PROMPTS -->
-            <div class="prompt-set">
-                <div class="prompt-set-label">SECRET DOCS demo — facilitator runs these</div>
-
-                <div class="card" style="margin-bottom:0.8rem">
-                    <div class="prompt-header">
-                        <span class="prompt-badge pb-retrieval">Factual retrieval</span>
-                        <span class="prompt-title">Cyberspace Layers — AJP-3.20</span>
-                    </div>
-                    <div class="prompt-meta">Attach: AJP-3.20 only · Tests: Lessons 1, 6</div>
-                    <div class="code-wrap">
-                        <div class="code-block"><span class="hl">[System Context]</span>
+                <div class="prompt-meta">Attach: AJP-3.20 only · Tests: Lessons 1, 6</div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
 You are a precise military doctrine analyst.
 Answer using only the attached AJP-3.20 document.
 
@@ -1152,18 +730,17 @@ Do not use outside knowledge about cybersecurity or SECRET doctrine.
 
 <span class="hl">[Output Format]</span>
 Three numbered items. Each: Layer name | Description | Quoted phrase.</div>
-                        <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                    </div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                 </div>
-
-                <div class="card" style="margin-bottom:0.8rem">
-                    <div class="prompt-header">
-                        <span class="prompt-badge pb-synthesis">Cross-section synthesis</span>
-                        <span class="prompt-title">Cyber and Traditional Domains — AJP-3.20</span>
-                    </div>
-                    <div class="prompt-meta">Attach: AJP-3.20 only · Tests: Lessons 3, 4</div>
-                    <div class="code-wrap">
-                        <div class="code-block"><span class="hl">[System Context]</span>
+            </div>
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-synthesis">Cross-section synthesis</span>
+                    <span class="prompt-title">Cyber and Traditional Domains — AJP-3.20</span>
+                </div>
+                <div class="prompt-meta">Attach: AJP-3.20 only · Tests: Lessons 3, 4</div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
 You are a military doctrine analyst.
 
 <span class="hl">[Task]</span>
@@ -1177,18 +754,17 @@ Do not use outside knowledge.
 <span class="hl">[Output Format]</span>
 Two paragraphs. First: how the document defines the relationship.
 Second: what the document says about command and coordination across domains.</div>
-                        <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                    </div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                 </div>
-
-                <div class="card" style="margin-bottom:0.8rem">
-                    <div class="prompt-header">
-                        <span class="prompt-badge pb-gap">Large doc stress test</span>
-                        <span class="prompt-title">Planning Phases — OPS (501 pages)</span>
-                    </div>
-                    <div class="prompt-meta">Attach: COPD only · Tests: Lessons 5, 7</div>
-                    <div class="code-wrap">
-                        <div class="code-block"><span class="hl">[System Context]</span>
+            </div>
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-gap">Large doc stress test</span>
+                    <span class="prompt-title">Planning Phases — OPS (501 pages)</span>
+                </div>
+                <div class="prompt-meta">Attach: COPD only · Tests: Lessons 5, 7</div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
 You are a planning analyst reviewing SECRET operational doctrine.
 
 <span class="hl">[Task]</span>
@@ -1201,18 +777,17 @@ Cite the section or page number for each phase.
 
 <span class="hl">[Output Format]</span>
 Six numbered items. Each: Phase name | Primary output | Section reference.</div>
-                        <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                    </div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                 </div>
-
-                <div class="card" style="margin-bottom:0.8rem">
-                    <div class="prompt-header">
-                        <span class="prompt-badge pb-injection">Context injection</span>
-                        <span class="prompt-title">Deliberate grounding — paste text directly</span>
-                    </div>
-                    <div class="prompt-meta">No file attachment — paste content directly · Tests: Lessons 8, 9</div>
-                    <div class="code-wrap">
-                        <div class="code-block"><span class="hl">[System Context]</span>
+            </div>
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-injection">Context injection</span>
+                    <span class="prompt-title">Deliberate grounding — paste text directly</span>
+                </div>
+                <div class="prompt-meta">No file attachment — paste content directly · Tests: Lessons 8, 9</div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
 You are a planning analyst. The following is an extract from the COPD,
 Section 3.2, describing the Operational Design process:
 
@@ -1230,21 +805,20 @@ Be explicit about what is stated versus what is implied.
 <span class="hl">[Output Format]</span>
 Part 1: Numbered list of explicit inputs.
 Part 2: One paragraph identifying the implied gap.</div>
-                        <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                    </div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                 </div>
             </div>
+        </div>
 
-            <!-- PARTICIPANT PROMPTS -->
-            <div class="prompt-set">
-                <div class="prompt-set-label">Your own documents — three prompts to try</div>
-
-                <div class="card" style="margin-bottom:0.8rem">
-                    <div class="prompt-header">
-                        <span class="prompt-badge pb-retrieval">Prompt A — Factual retrieval</span>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-block"><span class="hl">[System Context]</span>
+        <!-- PARTICIPANT PROMPTS -->
+        <div class="prompt-set">
+            <div class="prompt-set-label">Your own documents — three prompts to try</div>
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-retrieval">Prompt A — Factual retrieval</span>
+                </div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
 You are a precise analyst reviewing the attached document.
 
 <span class="hl">[Task]</span>
@@ -1257,16 +831,15 @@ Do not use outside knowledge.
 
 <span class="hl">[Output Format]</span>
 Three numbered items. Each: Decision | Who | Expected outcome | Quote.</div>
-                        <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                    </div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                 </div>
-
-                <div class="card" style="margin-bottom:0.8rem">
-                    <div class="prompt-header">
-                        <span class="prompt-badge pb-gap">Prompt B — Gap detection</span>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-block"><span class="hl">[System Context]</span>
+            </div>
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-gap">Prompt B — Gap detection</span>
+                </div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
 You are a critical reviewer.
 
 <span class="hl">[Task]</span>
@@ -1281,16 +854,15 @@ Stay within the document. Name the section where the assumption appears.
 Part 1: The assumption (one sentence).
 Part 2: Where it appears (section or page reference).
 Part 3: The risk it creates (two sentences).</div>
-                        <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                    </div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                 </div>
-
-                <div class="card" style="margin-bottom:0.8rem">
-                    <div class="prompt-header">
-                        <span class="prompt-badge pb-action">Prompt C — Action extraction</span>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-block"><span class="hl">[System Context]</span>
+            </div>
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-action">Prompt C — Action extraction</span>
+                </div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
 You are a project analyst.
 
 <span class="hl">[Task]</span>
@@ -1300,218 +872,186 @@ if stated. Mark missing information explicitly as "not stated."
 
 <span class="hl">[Output Format]</span>
 Numbered list. Each: Action | Owner | Deadline.</div>
-                        <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                    </div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ===== FOUR-PART PROMPT ANATOMY (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="prompt-anatomy">
-        <div class="section-header" onclick="toggleSection(this)">
-            <i class="fa-solid fa-puzzle-piece"></i>
-            <h2>The four-part prompt anatomy</h2>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="card">
-                <div class="code-wrap">
-                    <div class="code-block"><span class="hl">[System Context]</span>  <span class="comment">→ who the model is and what it is working with</span>
+<!-- FOUR-PART PROMPT ANATOMY (always visible) -->
+<div class="section-header">
+    <i class="fa-solid fa-puzzle-piece"></i>
+    <h2>The four-part prompt anatomy</h2>
+</div>
+<div class="card">
+    <div class="code-wrap">
+        <div class="code-block"><span class="hl">[System Context]</span>  <span class="comment">→ who the model is and what it is working with</span>
 <span class="hl">[Task]</span>            <span class="comment">→ one clear verb: extract, identify, compare, summarize</span>
 <span class="hl">[Constraints]</span>    <span class="comment">→ what to use, what to avoid, what to name explicitly</span>
 <span class="hl">[Output Format]</span>  <span class="comment">→ exact structure — no ambiguity</span></div>
-                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
-                </div>
-                <p style="margin-top:0.8rem;font-size:0.78rem">Common errors: task has two verbs (pick one) · no output format (you lose control) · no constraints (model fills gaps) · generic system context (give it a specific role)</p>
-            </div>
-        </div>
+        <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
     </div>
+    <p style="margin-top:0.8rem;font-size:0.78rem">Common errors: task has two verbs (pick one) · no output format (you lose control) · no constraints (model fills gaps) · generic system context (give it a specific role)</p>
+</div>
 
-    <!-- ===== STACK (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="stack">
-        <div class="section-header" onclick="toggleSection(this)">
-            <i class="fa-solid fa-layer-group"></i>
-            <h2>The workshop stack</h2>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="card">
-                <table class="stack-table">
-                    <thead>
-                        <tr><th>Tool</th><th>Role</th><th>Why this choice</th></tr>
-                    </thead>
+<!-- STACK (collapsible, collapsed by default) -->
+<div class="collapsible-section" id="stack">
+    <div class="section-header" onclick="toggleSection(this)">
+        <i class="fa-solid fa-layer-group"></i>
+        <h2>The workshop stack</h2>
+        <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+    <div class="section-content">
+        <div class="card">
+            <table class="stack-table">
+                <thead><tr><th>Tool</th><th>Role</th><th>Why this choice</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>LM Studio</strong></td><td>Local model GUI</td><td>Desktop app. No Docker. No terminal. Built-in document attach. CPU inference out of the box.</td></tr>
+                    <tr><td><strong>Phi-4 Mini Q4_K_M</strong></td><td>Primary model</td><td>3.8B parameters. 2.3GB on disk. Best CPU-only model in 2026. 10–12 tok/s on 13th gen i7.</td></tr>
+                    <tr><td><strong>Qwen2.5 3B Q4_K_M</strong></td><td>Backup model</td><td>If Phi-4 Mini has issues on any machine. Similar speed profile.</td></tr>
+                    <tr><td><strong>Ollama + qwen2.5-coder:1.5b</strong></td><td>Coding demo only</td><td>VS Code extension block. Optional. Requires pre-install.</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top:1rem">
+                <h3 style="margin-bottom:0.7rem">Hardware reality</h3>
+                <table class="hw-table">
+                    <thead><tr><th>Model</th><th>Speed</th><th>Verdict</th></tr></thead>
                     <tbody>
-                        <tr>
-                            <td><strong>LM Studio</strong></td>
-                            <td>Local model GUI</td>
-                            <td>Desktop app. No Docker. No terminal. Built-in document attach. CPU inference out of the box.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Phi-4 Mini Q4_K_M</strong></td>
-                            <td>Primary model</td>
-                            <td>3.8B parameters. 2.3GB on disk. Best CPU-only model in 2026. 10–12 tok/s on 13th gen i7.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Qwen2.5 3B Q4_K_M</strong></td>
-                            <td>Backup model</td>
-                            <td>If Phi-4 Mini has issues on any machine. Similar speed profile.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ollama + qwen2.5-coder:1.5b</strong></td>
-                            <td>Coding demo only</td>
-                            <td>VS Code extension block. Optional. Requires pre-install.</td>
-                        </tr>
+                        <tr><td>Phi-4 Mini Q4_K_M (3.8B)</td><td>8–12 tok/s</td><td class="badge-ok">✓ Usable</td></tr>
+                        <tr><td>Qwen2.5 3B Q4_K_M</td><td>8–10 tok/s</td><td class="badge-ok">✓ Backup</td></tr>
+                        <tr><td>Qwen2.5 7B</td><td>2–4 tok/s</td><td class="badge-no">✗ Too slow for live</td></tr>
                     </tbody>
                 </table>
-
-                <div style="margin-top:1rem">
-                    <h3 style="margin-bottom:0.7rem">Hardware reality</h3>
-                    <table class="hw-table">
-                        <thead>
-                            <tr><th>Model</th><th>Speed</th><th>Verdict</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Phi-4 Mini Q4_K_M (3.8B)</td><td>8–12 tok/s</td><td class="badge-ok">✓ Usable</td></tr>
-                            <tr><td>Qwen2.5 3B Q4_K_M</td><td>8–10 tok/s</td><td class="badge-ok">✓ Backup</td></tr>
-                            <tr><td>Qwen2.5 7B</td><td>2–4 tok/s</td><td class="badge-no">✗ Too slow for live</td></tr>
-                        </tbody>
-                    </table>
-                    <p style="font-size:0.75rem;margin-top:0.6rem">A paragraph response takes 20–30 seconds. Use the wait time to read the output carefully. That is not wasted time. That is evaluation time.</p>
-                </div>
+                <p style="font-size:0.75rem;margin-top:0.6rem">A paragraph response takes 20–30 seconds. Use the wait time to read the output carefully. That is not wasted time. That is evaluation time.</p>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ===== WHERE TO GO FROM HERE (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="where-to-go">
-        <div class="section-header" onclick="toggleSection(this)" style="margin-top:2.5rem">
-            <i class="fa-solid fa-map"></i>
-            <h2>Where to go from here</h2>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="card">
-                <div class="timeline">
-                    <div class="tl-item">
-                        <div class="tl-time">Today</div>
-                        <div class="tl-content">
-                            <div class="tl-title">Phi-4 Mini on CPU</div>
-                            <div class="tl-desc">Document analysis, private prompts, offline work</div>
-                        </div>
+<!-- WHERE TO GO FROM HERE (collapsible, collapsed by default) -->
+<div class="collapsible-section" id="where-to-go">
+    <div class="section-header" onclick="toggleSection(this)" style="margin-top:2.5rem">
+        <i class="fa-solid fa-map"></i>
+        <h2>Where to go from here</h2>
+        <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+    <div class="section-content">
+        <div class="card">
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-time">Today</div>
+                    <div class="tl-content">
+                        <div class="tl-title">Phi-4 Mini on CPU</div>
+                        <div class="tl-desc">Document analysis, private prompts, offline work</div>
                     </div>
-                    <div class="tl-item">
-                        <div class="tl-time">Next</div>
-                        <div class="tl-content">
-                            <div class="tl-title">GPU machine → Mistral 7B or Llama 3.1 8B</div>
-                            <div class="tl-desc">General tasks, longer context, 10x faster inference</div>
-                        </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-time">Next</div>
+                    <div class="tl-content">
+                        <div class="tl-title">GPU machine → Mistral 7B or Llama 3.1 8B</div>
+                        <div class="tl-desc">General tasks, longer context, 10x faster inference</div>
                     </div>
-                    <div class="tl-item">
-                        <div class="tl-time">Advanced</div>
-                        <div class="tl-content">
-                            <div class="tl-title">Graph RAG</div>
-                            <div class="tl-desc">Cross-document reasoning at scale — connects information across many files</div>
-                        </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-time">Advanced</div>
+                    <div class="tl-content">
+                        <div class="tl-title">Graph RAG</div>
+                        <div class="tl-desc">Cross-document reasoning at scale — connects information across many files</div>
                     </div>
-                    <div class="tl-item">
-                        <div class="tl-time">Pro</div>
-                        <div class="tl-content">
-                            <div class="tl-title">Fine-tuning</div>
-                            <div class="tl-desc">Adapt a model to your domain, your language, your documents</div>
-                        </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-time">Pro</div>
+                    <div class="tl-content">
+                        <div class="tl-title">Fine-tuning</div>
+                        <div class="tl-desc">Adapt a model to your domain, your language, your documents</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ===== RESOURCES (collapsible, collapsed by default) ===== -->
-    <div class="collapsible-section" id="resources">
-        <div class="section-header" onclick="toggleSection(this)">
-            <i class="fa-solid fa-gift"></i>
-            <h2>Free AI resources</h2>
-            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-        <div class="section-content">
-            <div class="card">
-                <h3 style="margin-bottom:0.8rem">Hosted free tiers — someone else runs it</h3>
-                <div class="resource-grid">
-                    <a class="resource-item" href="https://aistudio.google.com" target="_blank" style="text-decoration:none">
-                        <i class="fa-brands fa-google"></i>
-                        <div><div class="r-name">Google AI Studio</div><div class="r-desc">Gemini 2.5 Pro · 1M token context</div></div>
-                        <span class="r-tag rt-hosted">Hosted</span>
-                    </a>
-                    <a class="resource-item" href="https://console.groq.com" target="_blank" style="text-decoration:none">
-                        <i class="fa-solid fa-bolt"></i>
-                        <div><div class="r-name">Groq</div><div class="r-desc">Llama 3.3 70B · very fast inference</div></div>
-                        <span class="r-tag rt-hosted">Hosted</span>
-                    </a>
-                    <a class="resource-item" href="https://console.mistral.ai" target="_blank" style="text-decoration:none">
-                        <i class="fa-solid fa-wind"></i>
-                        <div><div class="r-name">Mistral La Plateforme</div><div class="r-desc">European data compliance</div></div>
-                        <span class="r-tag rt-hosted">Hosted</span>
-                    </a>
-                    <a class="resource-item" href="https://openrouter.ai" target="_blank" style="text-decoration:none">
-                        <i class="fa-solid fa-shuffle"></i>
-                        <div><div class="r-name">OpenRouter</div><div class="r-desc">50+ models · free tier aggregator</div></div>
-                        <span class="r-tag rt-hosted">Hosted</span>
-                    </a>
-                </div>
-
-                <h3 style="margin-bottom:0.8rem;margin-top:1.2rem">Self-hosted — nothing leaves your machine</h3>
-                <div class="resource-grid">
-                    <a class="resource-item" href="https://lmstudio.ai" target="_blank" style="text-decoration:none">
-                        <i class="fa-solid fa-desktop"></i>
-                        <div><div class="r-name">LM Studio</div><div class="r-desc">GUI · document attach · CPU OK</div></div>
-                        <span class="r-tag rt-self">Self</span>
-                    </a>
-                    <a class="resource-item" href="https://ollama.com" target="_blank" style="text-decoration:none">
-                        <i class="fa-solid fa-terminal"></i>
-                        <div><div class="r-name">Ollama</div><div class="r-desc">CLI · API · VS Code integration</div></div>
-                        <span class="r-tag rt-self">Self</span>
-                    </a>
-                    <a class="resource-item" href="https://huggingface.co" target="_blank" style="text-decoration:none">
-                        <i class="fa-solid fa-face-smile"></i>
-                        <div><div class="r-name">Hugging Face</div><div class="r-desc">Model downloads · Spaces</div></div>
-                        <span class="r-tag rt-self">Self</span>
-                    </a>
-                </div>
-
-                <h3 style="margin-bottom:0.8rem;margin-top:1.2rem">One-time credits</h3>
-                <div class="resource-grid">
-                    <a class="resource-item" href="https://aws.amazon.com/bedrock" target="_blank" style="text-decoration:none">
-                        <i class="fa-brands fa-aws"></i>
-                        <div><div class="r-name">AWS Bedrock</div><div class="r-desc">$300 one-time credit · multiple models</div></div>
-                        <span class="r-tag rt-credit">Credit</span>
-                    </a>
-                    <div class="resource-item">
-                        <i class="fa-solid fa-robot"></i>
-                        <div><div class="r-name">AgentRouter</div><div class="r-desc">One-time free tier credit</div></div>
-                        <span class="r-tag rt-credit">Credit</span>
-                    </div>
+<!-- RESOURCES (collapsible, collapsed by default) -->
+<div class="collapsible-section" id="resources">
+    <div class="section-header" onclick="toggleSection(this)">
+        <i class="fa-solid fa-gift"></i>
+        <h2>Free AI resources</h2>
+        <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+    <div class="section-content">
+        <div class="card">
+            <h3 style="margin-bottom:0.8rem">Hosted free tiers — someone else runs it</h3>
+            <div class="resource-grid">
+                <a class="resource-item" href="https://aistudio.google.com" target="_blank">
+                    <i class="fa-brands fa-google"></i>
+                    <div><div class="r-name">Google AI Studio</div><div class="r-desc">Gemini 2.5 Pro · 1M token context</div></div>
+                    <span class="r-tag rt-hosted">Hosted</span>
+                </a>
+                <a class="resource-item" href="https://console.groq.com" target="_blank">
+                    <i class="fa-solid fa-bolt"></i>
+                    <div><div class="r-name">Groq</div><div class="r-desc">Llama 3.3 70B · very fast inference</div></div>
+                    <span class="r-tag rt-hosted">Hosted</span>
+                </a>
+                <a class="resource-item" href="https://console.mistral.ai" target="_blank">
+                    <i class="fa-solid fa-wind"></i>
+                    <div><div class="r-name">Mistral La Plateforme</div><div class="r-desc">European data compliance</div></div>
+                    <span class="r-tag rt-hosted">Hosted</span>
+                </a>
+                <a class="resource-item" href="https://openrouter.ai" target="_blank">
+                    <i class="fa-solid fa-shuffle"></i>
+                    <div><div class="r-name">OpenRouter</div><div class="r-desc">50+ models · free tier aggregator</div></div>
+                    <span class="r-tag rt-hosted">Hosted</span>
+                </a>
+            </div>
+            <h3 style="margin-bottom:0.8rem;margin-top:1.2rem">Self-hosted — nothing leaves your machine</h3>
+            <div class="resource-grid">
+                <a class="resource-item" href="https://lmstudio.ai" target="_blank">
+                    <i class="fa-solid fa-desktop"></i>
+                    <div><div class="r-name">LM Studio</div><div class="r-desc">GUI · document attach · CPU OK</div></div>
+                    <span class="r-tag rt-self">Self</span>
+                </a>
+                <a class="resource-item" href="https://ollama.com" target="_blank">
+                    <i class="fa-solid fa-terminal"></i>
+                    <div><div class="r-name">Ollama</div><div class="r-desc">CLI · API · VS Code integration</div></div>
+                    <span class="r-tag rt-self">Self</span>
+                </a>
+                <a class="resource-item" href="https://huggingface.co" target="_blank">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <div><div class="r-name">Hugging Face</div><div class="r-desc">Model downloads · Spaces</div></div>
+                    <span class="r-tag rt-self">Self</span>
+                </a>
+            </div>
+            <h3 style="margin-bottom:0.8rem;margin-top:1.2rem">One-time credits</h3>
+            <div class="resource-grid">
+                <a class="resource-item" href="https://aws.amazon.com/bedrock" target="_blank">
+                    <i class="fa-brands fa-aws"></i>
+                    <div><div class="r-name">AWS Bedrock</div><div class="r-desc">$300 one-time credit · multiple models</div></div>
+                    <span class="r-tag rt-credit">Credit</span>
+                </a>
+                <div class="resource-item">
+                    <i class="fa-solid fa-robot"></i>
+                    <div><div class="r-name">AgentRouter</div><div class="r-desc">One-time free tier credit</div></div>
+                    <span class="r-tag rt-credit">Credit</span>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="sep"></div>
+<div class="sep"></div>
 
-    <!-- ===== FOOTER ===== -->
-    <div class="footer">
-        <div class="footer-title">Your files. Your model. Your machine.</div>
-        <p>Nothing leaves the room.</p>
-        <div class="ft-badge">🇫🇷 La French Tech · Bangkok</div>
-        <p style="margin-top:0.8rem;font-size:0.72rem">The Sovereign Workspace · July 15, 2026</p>
-    </div>
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-title">Your files. Your model. Your machine.</div>
+    <p>Nothing leaves the room.</p>
+    <div class="ft-badge">🇫🇷 La French Tech · Bangkok</div>
+    <p style="margin-top:0.8rem;font-size:0.72rem">The Sovereign Workspace · July 15, 2026</p>
+</div>
 
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // No fallback needed for LLMtypes.jpg — it should exist
-});
-
 // Checklist persistence
 document.querySelectorAll('.check-item').forEach((item, i) => {
     const key = 'check_' + i;
@@ -1520,23 +1060,17 @@ document.querySelectorAll('.check-item').forEach((item, i) => {
         this.classList.toggle('done');
         localStorage.setItem(key, this.classList.contains('done') ? '1' : '');
     });
-    // Remove inline onclick to prevent double binding
-    item.removeAttribute('onclick');
 });
 
-// Copy function for code blocks
+// Copy function
 function copyBlock(btn) {
     const block = btn.previousElementSibling;
     if (!block) return;
     navigator.clipboard.writeText(block.innerText).then(() => {
         btn.textContent = 'Copied!';
         btn.classList.add('copied');
-        setTimeout(() => { 
-            btn.textContent = 'Copy'; 
-            btn.classList.remove('copied'); 
-        }, 1800);
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
     }).catch(() => {
-        // Fallback for older browsers
         const range = document.createRange();
         range.selectNode(block);
         window.getSelection().removeAllRanges();
@@ -1545,10 +1079,7 @@ function copyBlock(btn) {
         window.getSelection().removeAllRanges();
         btn.textContent = 'Copied!';
         btn.classList.add('copied');
-        setTimeout(() => { 
-            btn.textContent = 'Copy'; 
-            btn.classList.remove('copied'); 
-        }, 1800);
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
     });
 }
 
@@ -1558,17 +1089,10 @@ function toggleSection(headerElement) {
     if (!section) return;
     const content = section.querySelector('.section-content');
     if (!content) return;
-    
-    // Toggle open class
     content.classList.toggle('open');
-    // Update icon
     const icon = headerElement.querySelector('.toggle-icon i');
     if (icon) {
-        if (content.classList.contains('open')) {
-            icon.className = 'fa-solid fa-chevron-down';
-        } else {
-            icon.className = 'fa-solid fa-chevron-right';
-        }
+        icon.className = content.classList.contains('open') ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-right';
     }
 }
 </script>
