@@ -1,412 +1,1440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French Tech · Bangkok</title>
-  <!-- 
-    Visual identity : French Tech Bangkok
-    Primary red    : #E1000F
-    Dark navy      : #1A1A2E
-    Light bg       : #F4F4F6
-    White          : #FFFFFF
-    Text / black   : #1A1A2E (used as dark text)
-  -->
-  <style>
-    /* ----- reset & base ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sovereign Workspace — French Tech Bangkok</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* ----- French Tech Bangkok Brand Identity ----- */
+        :root {
+            --ft-red: #E1000F;
+            --ft-navy: #1A1A2E;
+            --ft-light-bg: #F4F4F6;
+            --ft-white: #FFFFFF;
+            --ft-text: #1A1A2E;
+            
+            /* Derived tokens */
+            --bg: #F4F4F6;
+            --bg-card: #FFFFFF;
+            --bg-elevated: #F4F4F6;
+            --bg-code: #F4F4F6;
+            --border: #d0d0db;
+            --border-soft: #eaeaf0;
+            --text: #1A1A2E;
+            --text-muted: #4a4a5e;
+            --text-dim: #6b6b80;
+            --accent: #E1000F;
+            --accent-dim: rgba(225, 0, 15, 0.08);
+            --accent-border: rgba(225, 0, 15, 0.15);
+            --gold: #E1000F;
+            --gold-dim: rgba(225, 0, 15, 0.08);
+            --green: #2d8f5c;
+            --green-dim: rgba(45, 143, 92, 0.08);
+            --red: #E1000F;
+            --red-dim: rgba(225, 0, 15, 0.08);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 20px 40px -12px rgba(26, 26, 46, 0.12), 0 8px 24px -6px rgba(0, 0, 0, 0.02);
+        }
 
-    body {
-      background-color: #F4F4F6;   /* light grey background – fond clair */
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 2rem 1.5rem;
-      line-height: 1.4;
-      color: #1A1A2E;
-    }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* ----- main card : fond blanc (white background) ----- */
-    .brand-card {
-      max-width: 820px;
-      width: 100%;
-      background-color: #FFFFFF;    /* FOND BLANC */
-      border-radius: 2.5rem;
-      padding: 3.5rem 3rem;
-      box-shadow: 0 20px 40px -12px rgba(26, 26, 46, 0.12), 0 8px 24px -6px rgba(0, 0, 0, 0.02);
-      transition: box-shadow 0.2s ease;
-      border: 1px solid rgba(26, 26, 46, 0.02);
-    }
+        html { scroll-behavior: smooth; }
 
-    /* ----- logo / wordmark (LA FRENCH TECH BANGKOK) ----- */
-    .logo-block {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 2.5rem;
-      border-bottom: 2px solid #E1000F;  /* signature red line */
-      padding-bottom: 1.5rem;
-    }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            padding: 0 16px 100px;
+            font-size: 15px;
+        }
 
-    .logo-line-1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #1A1A2E;            /* dark navy / presque noir */
-      line-height: 1.1;
-    }
+        .container { max-width: 900px; margin: 0 auto; }
 
-    .logo-line-1 .french {
-      color: #E1000F;            /* FRENCH in red */
-      font-weight: 700;
-    }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-    .logo-line-1 .tech {
-      color: #1A1A2E;
-      font-weight: 600;
-    }
+        /* ===== TYPOGRAPHY ===== */
+        h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: var(--ft-navy); }
+        h2 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ft-navy); }
+        h3 { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.01em; color: var(--text-muted); text-transform: uppercase; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        p { color: var(--text-muted); line-height: 1.7; }
 
-    .logo-line-2 {
-      font-size: 1.8rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      color: #1A1A2E;
-      margin-top: 0.1rem;
-      opacity: 0.9;
-    }
+        /* ===== HERO ===== */
+        .hero {
+            padding: 3.5rem 0 2.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2.5rem;
+            background: var(--ft-white);
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        .hero-eyebrow .french {
+            color: var(--ft-navy);
+            font-weight: 400;
+        }
+        
+        .hero h1 {
+            background: linear-gradient(135deg, var(--ft-navy) 0%, var(--ft-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.6rem;
+        }
+        
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 560px;
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+        .hero-meta i { color: var(--accent); }
 
-    .logo-line-2 .bangkok {
-      font-weight: 600;
-      color: #1A1A2E;
-      background: #F4F4F6;       /* léger rappel du fond clair */
-      padding: 0.1rem 0.6rem 0.1rem 0.4rem;
-      border-radius: 40px;
-      display: inline-block;
-    }
+        /* ===== MASTER QUESTION ===== */
+        .master-q {
+            border: 1px solid var(--accent-border);
+            background: linear-gradient(135deg, var(--accent-dim) 0%, rgba(0,0,0,0) 100%);
+            border-radius: var(--radius);
+            padding: 1.8rem 2rem;
+            margin: 0 0 2.5rem;
+            text-align: center;
+        }
+        .master-q .eyebrow {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+        .master-q .q {
+            font-size: clamp(1rem, 3vw, 1.35rem);
+            font-weight: 700;
+            color: var(--ft-navy);
+            line-height: 1.3;
+        }
+        .master-q .q i { color: var(--gold); margin-right: 0.3rem; }
 
-    /* ----- tagline / identité ----- */
-    .tagline {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 0.75rem 1.25rem;
-      margin-bottom: 2.25rem;
-      padding: 0.25rem 0 0.5rem 0;
-    }
+        /* ===== NAV ===== */
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 2.5rem;
+        }
+        .nav-pill {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            background: var(--bg-card);
+            cursor: pointer;
+            transition: all 0.15s;
+            text-decoration: none;
+        }
+        .nav-pill:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
 
-    .tagline .pill {
-      background: #E1000F;
-      color: #FFFFFF;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 0.3rem 1.1rem;
-      border-radius: 40px;
-      text-transform: uppercase;
-      display: inline-block;
-    }
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin: 2.5rem 0 1.2rem;
+        }
+        .section-header i { color: var(--accent); font-size: 1rem; }
+        .section-header h2 { color: var(--text); }
+        .section-header .count {
+            margin-left: auto;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 0.15rem 0.6rem;
+            border-radius: 10px;
+        }
 
-    .tagline .sub {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #1A1A2E;
-      opacity: 0.7;
-      letter-spacing: 0.02em;
-    }
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.15s, box-shadow 0.15s;
+            box-shadow: var(--shadow);
+        }
+        .card:hover { border-color: var(--accent-border); box-shadow: 0 24px 48px -12px rgba(26, 26, 46, 0.15); }
 
-    /* ----- grille d'identité (couleurs) ----- */
-    .identity-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 2rem 2.5rem;
-      background: #F4F4F6;       /* fond clair pour faire ressortir les blocs */
-      padding: 1.8rem 2rem;
-      border-radius: 2rem;
-      margin: 1.8rem 0 2.2rem 0;
-    }
+        /* ===== CHECKLIST ===== */
+        .checklist { display: flex; flex-direction: column; gap: 0.5rem; }
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            padding: 0.8rem 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm);
+            border-left: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.15s;
+            user-select: none;
+        }
+        .check-item:hover { border-color: var(--accent-border); border-left-color: var(--accent); background: var(--ft-white); }
+        .check-item.done { border-left-color: var(--green); background: var(--green-dim); }
+        .check-item.done .checkbox { background: var(--green); border-color: var(--green); color: #fff; }
+        .checkbox {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid var(--border);
+            border-radius: 4px;
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: transparent;
+            transition: all 0.15s;
+        }
+        .check-info { flex: 1; }
+        .check-title { font-weight: 500; font-size: 0.9rem; color: var(--text); }
+        .check-desc { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
+        .check-link { font-size: 0.75rem; color: var(--accent); display: inline-block; margin-top: 0.2rem; }
+        .check-tag {
+            flex-shrink: 0;
+            align-self: center;
+            font-size: 0.58rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.15rem 0.55rem;
+            border-radius: 8px;
+        }
+        .tag-home { background: var(--gold-dim); color: var(--gold); }
+        .tag-workshop { background: var(--accent-dim); color: var(--accent); }
+        .tag-optional { background: rgba(107,125,153,0.1); color: var(--text-muted); }
 
-    .color-swatch {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
+        /* ===== CODE BLOCKS ===== */
+        .code-wrap {
+            background: var(--bg-code);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            margin: 0.6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .code-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            padding: 0.4rem 1rem 0;
+            font-weight: 600;
+        }
+        .code-block {
+            padding: 0.7rem 1rem 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            line-height: 1.65;
+            color: var(--ft-navy);
+            white-space: pre-wrap;
+            word-break: break-word;
+            overflow-x: auto;
+        }
+        .code-block .hl { color: var(--accent); font-weight: 600; }
+        .code-block .comment { color: var(--text-dim); font-style: italic; }
+        .copy-btn {
+            position: absolute;
+            top: 0.4rem;
+            right: 0.4rem;
+            background: var(--border);
+            border: none;
+            color: var(--text-muted);
+            padding: 0.2rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.03em;
+        }
+        .copy-btn:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
+        .copy-btn.copied { background: var(--green); color: #fff; }
 
-    .color-swatch .label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 600;
-      color: #1A1A2E;
-      opacity: 0.6;
-    }
+        /* ===== CONTEXT DIAGRAM ===== */
+        .context-diagram {
+            background: var(--bg-code);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.6rem 2rem;
+            margin: 1rem 0;
+        }
+        .diagram-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .diagram-node {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .diagram-node .node-box {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            border: 1px solid;
+            white-space: nowrap;
+        }
+        .diagram-node .node-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            flex: 1;
+        }
+        .node-doc { background: var(--accent-dim); border-color: var(--accent-border); color: var(--ft-navy); }
+        .node-bottleneck { background: var(--red-dim); border-color: rgba(225, 0, 15, 0.3); color: var(--red); }
+        .node-window { background: var(--gold-dim); border-color: rgba(225, 0, 15, 0.3); color: var(--gold); }
+        .node-model { background: var(--green-dim); border-color: rgba(45, 143, 92, 0.3); color: var(--green); }
+        .node-answer { background: rgba(26, 26, 46, 0.04); border-color: var(--border); color: var(--text); }
+        .diagram-arrow {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            padding: 0.1rem 0 0.1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .diagram-arrow::before { content: '↓'; color: var(--border); }
 
-    .swatch-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+        /* ===== TWO TYPES ===== */
+        .two-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin: 0.8rem 0;
+        }
+        .type-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.1rem 1.3rem;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .type-card:hover { transform: translateY(-2px); box-shadow: 0 8px 16px -8px rgba(0,0,0,0.05); }
+        .type-card.type-self { border-color: var(--green-dim); border-bottom: 2px solid var(--green); }
+        .type-card .type-num { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 0.3rem; }
+        .type-self .type-num { color: var(--green); }
+        .type-hosted .type-num { color: var(--gold); }
+        .type-card .type-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
+        .type-card .type-items { list-style: none; }
+        .type-card .type-items li { font-size: 0.78rem; color: var(--text-muted); padding: 0.15rem 0; display: flex; gap: 0.4rem; }
+        .type-card .type-items li::before { content: '→'; color: var(--text-dim); flex-shrink: 0; }
 
-    .swatch {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      border: 1px solid rgba(26, 26, 46, 0.06);
-      flex-shrink: 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
-    }
+        /* ===== HIDDEN COST ===== */
+        .hidden-cost {
+            background: var(--red-dim);
+            border: 1px solid rgba(225, 0, 15, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.3rem;
+            margin: 0.8rem 0;
+        }
+        .hidden-cost .hc-title { font-size: 0.75rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
+        .hidden-cost .hc-rule { font-size: 0.82rem; color: var(--text-muted); padding: 0.2rem 0; display: flex; align-items: baseline; gap: 0.5rem; }
+        .hc-rule .r-icon { width: 1rem; flex-shrink: 0; }
+        .r-danger { color: var(--red); }
+        .r-safe { color: var(--green); }
 
-    .swatch.red {
-      background: #E1000F;
-    }
-    .swatch.navy {
-      background: #1A1A2E;
-    }
-    .swatch.white {
-      background: #FFFFFF;
-      border: 1px solid #d0d0db;
-    }
-    .swatch.light {
-      background: #F4F4F6;
-      border: 1px solid #d0d0db;
-    }
+        /* ===== 11 LESSONS ===== */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin: 0.8rem 0;
+        }
+        .lesson-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            display: flex;
+            gap: 0.7rem;
+            align-items: flex-start;
+            transition: border-color 0.15s, transform 0.15s;
+        }
+        .lesson-card:hover { border-color: var(--accent-border); transform: translateY(-1px); }
+        .lesson-num {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 1.4rem;
+            padding-top: 0.05rem;
+        }
+        .lesson-text { font-size: 0.82rem; line-height: 1.45; }
+        .lesson-text strong { color: var(--text); display: block; margin-bottom: 0.1rem; }
+        .lesson-text span { color: var(--text-muted); font-size: 0.75rem; }
+        .lesson-card.lesson-featured {
+            grid-column: 1 / -1;
+            border-color: rgba(225, 0, 15, 0.2);
+            background: var(--gold-dim);
+        }
+        .lesson-card.lesson-featured .lesson-num { color: var(--gold); }
 
-    .color-hex {
-      font-size: 0.85rem;
-      font-weight: 500;
-      font-family: 'SF Mono', 'Menlo', monospace;
-      color: #1A1A2E;
-      background: #FFFFFF;
-      padding: 0.2rem 0.8rem;
-      border-radius: 30px;
-      border: 1px solid #eaeaf0;
-      letter-spacing: 0.02em;
-    }
+        /* ===== PROMPTS ===== */
+        .prompt-set { margin-bottom: 1.5rem; }
+        .prompt-set-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .prompt-set-label::after { content: ''; flex: 1; height: 1px; background: var(--border-soft); }
+        .prompt-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.3rem;
+            flex-wrap: wrap;
+        }
+        .prompt-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.15rem 0.6rem;
+            border-radius: 8px;
+        }
+        .pb-retrieval { background: var(--accent-dim); color: var(--accent); }
+        .pb-synthesis { background: var(--gold-dim); color: var(--gold); }
+        .pb-injection { background: var(--green-dim); color: var(--green); }
+        .pb-gap { background: var(--red-dim); color: var(--red); }
+        .pb-action { background: rgba(155,89,182,0.1); color: #8e44ad; }
+        .prompt-title { font-weight: 600; font-size: 0.88rem; }
+        .prompt-meta { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.4rem; }
 
-    .color-hex small {
-      font-weight: 400;
-      opacity: 0.5;
-      font-size: 0.65rem;
-      margin-left: 0.3rem;
-    }
+        /* ===== STACK TABLE ===== */
+        .stack-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0.8rem 0; }
+        .stack-table th {
+            text-align: left;
+            padding: 0.4rem 0.7rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--text-dim);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+        .stack-table td {
+            padding: 0.5rem 0.7rem;
+            border-bottom: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            vertical-align: top;
+        }
+        .stack-table td strong { color: var(--text); }
+        .stack-table tr:last-child td { border-bottom: none; }
 
-    .color-desc {
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: #1A1A2E;
-      opacity: 0.7;
-      margin-top: 0.1rem;
-    }
+        /* ===== RESOURCES ===== */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin: 0.8rem 0;
+        }
+        .resource-item {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm);
+            padding: 0.65rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.82rem;
+            transition: all 0.15s;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .resource-item:hover { border-color: var(--accent-border); transform: translateX(2px); text-decoration: none; }
+        .resource-item i { color: var(--accent); width: 1rem; text-align: center; flex-shrink: 0; }
+        .resource-item .r-name { font-weight: 500; color: var(--text); }
+        .resource-item .r-desc { color: var(--text-muted); font-size: 0.72rem; }
+        .resource-item .r-tag {
+            margin-left: auto;
+            font-size: 0.55rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.1rem 0.5rem;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .rt-hosted { background: var(--accent-dim); color: var(--accent); }
+        .rt-self { background: var(--green-dim); color: var(--green); }
+        .rt-credit { background: var(--gold-dim); color: var(--gold); }
 
-    /* ----- specs (pantone, cmyk etc) ----- */
-    .specs-block {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem 2.5rem;
-      background: #FFFFFF;
-      padding: 1.2rem 1.8rem;
-      border-radius: 60px;
-      border: 1px solid #ebebf0;
-      margin: 0.5rem 0 2rem 0;
-    }
+        /* ===== VISUAL IMAGES ===== */
+        .visual-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        .visual-card img {
+            width: 100%;
+            display: block;
+            opacity: 0.92;
+            transition: opacity 0.2s;
+        }
+        .visual-card:hover img { opacity: 1; }
+        .visual-caption {
+            padding: 0.7rem 1.2rem;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--ft-white);
+        }
+        .visual-caption i { color: var(--accent); }
 
-    .spec-item {
-      display: flex;
-      align-items: baseline;
-      gap: 0.3rem;
-      font-size: 0.8rem;
-      color: #1A1A2E;
-    }
+        /* ===== HARDWARE TABLE ===== */
+        .hw-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 0.8rem 0; }
+        .hw-table th {
+            text-align: left;
+            padding: 0.4rem 0.7rem;
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--text-dim);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+        .hw-table td {
+            padding: 0.5rem 0.7rem;
+            border-bottom: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+        .hw-table tr:last-child td { border-bottom: none; }
+        .badge-ok { color: var(--green); font-weight: 600; }
+        .badge-no { color: var(--red); font-weight: 600; }
 
-    .spec-item strong {
-      font-weight: 600;
-      color: #1A1A2E;
-      opacity: 0.5;
-      font-size: 0.7rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-right: 0.2rem;
-    }
+        /* ===== TIMELINE ===== */
+        .timeline { display: flex; flex-direction: column; gap: 0; margin: 0.8rem 0; position: relative; padding-left: 1.5rem; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            width: 2px;
+            background: var(--border);
+        }
+        .tl-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            align-items: flex-start;
+            position: relative;
+        }
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.9rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--ft-white);
+        }
+        .tl-time {
+            font-size: 0.72rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            min-width: 3rem;
+            padding-top: 0.1rem;
+            flex-shrink: 0;
+        }
+        .tl-content { flex: 1; }
+        .tl-title { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+        .tl-desc { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.05rem; }
 
-    .spec-item .value {
-      font-weight: 500;
-      background: #F4F4F6;
-      padding: 0.1rem 0.7rem;
-      border-radius: 30px;
-      font-family: 'SF Mono', monospace;
-      font-size: 0.75rem;
-    }
+        /* ===== SEPARATOR ===== */
+        .sep { height: 1px; background: var(--border); margin: 2.5rem 0; }
 
-    /* ----- footer / note (fond blanc) ----- */
-    .footer-note {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 0.8rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #eaeaf0;
-      font-size: 0.8rem;
-      color: #1A1A2E;
-      opacity: 0.6;
-      gap: 0.5rem;
-    }
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .footer .footer-title { font-size: 1.2rem; font-weight: 700; color: var(--ft-navy); margin-bottom: 0.3rem; }
+        .footer p { font-size: 0.82rem; color: var(--text-dim); }
+        .footer .ft-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--ft-white);
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+        }
 
-    .footer-note .badge {
-      background: #1A1A2E;
-      color: #FFFFFF;
-      padding: 0.2rem 1rem;
-      border-radius: 40px;
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      opacity: 1;
-    }
-
-    /* ----- responsive adjustments ----- */
-    @media (max-width: 640px) {
-      .brand-card {
-        padding: 2rem 1.5rem;
-      }
-      .logo-line-1 {
-        font-size: 1.8rem;
-      }
-      .logo-line-2 {
-        font-size: 1.4rem;
-      }
-      .identity-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
-      }
-      .specs-block {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.6rem;
-        border-radius: 30px;
-        padding: 1rem 1.5rem;
-      }
-      .tagline {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .logo-line-1 {
-        font-size: 1.5rem;
-      }
-      .logo-line-2 {
-        font-size: 1.2rem;
-      }
-      .color-hex {
-        font-size: 0.7rem;
-        padding: 0.1rem 0.6rem;
-      }
-    }
-  </style>
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .two-types, .lessons-grid, .resource-grid { grid-template-columns: 1fr; }
+            .lesson-card.lesson-featured { grid-column: 1; }
+            body { font-size: 14px; }
+            .container { padding: 0 8px; }
+            .hero { padding: 2rem 0 1.5rem; }
+            .brand-card { padding: 1.5rem; }
+            .timeline { padding-left: 1rem; }
+            .tl-item::before { left: -1rem; }
+        }
+        @media (max-width: 420px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero-meta { gap: 0.3rem 0.8rem; font-size: 0.7rem; }
+            .master-q { padding: 1.2rem; }
+            .card { padding: 1rem; }
+        }
+    </style>
 </head>
 <body>
-  <div class="brand-card">
-    <!-- ========== LOGO : LA FRENCH TECH BANGKOK ========== -->
-    <div class="logo-block">
-      <div class="logo-line-1">
-        <span class="french">LA</span> 
-        <span class="french">FRENCH</span> 
-        <span class="tech">TECH</span>
-      </div>
-      <div class="logo-line-2">
-        <span class="bangkok">BANGKOK</span>
-      </div>
-    </div>
+<div class="container">
 
-    <!-- ========== TAGLINE / IDENTITÉ ========== -->
-    <div class="tagline">
-      <span class="pill">Fond Blanc</span>
-      <span class="sub">▪ visual identity · chapter Bangkok</span>
-      <span class="sub" style="opacity:0.5;">#E1000F</span>
-    </div>
-
-    <!-- ========== COULEURS PRINCIPALES ========== -->
-    <div class="identity-grid">
-      <!-- gauche : primaire + secondaire -->
-      <div class="color-swatch">
-        <span class="label">▪ Primary</span>
-        <div class="swatch-row">
-          <div class="swatch red"></div>
-          <span class="color-hex">#E1000F <small>red</small></span>
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+        <div class="hero-eyebrow">
+            <i class="fa-solid fa-lock"></i> 
+            <span class="french">La French Tech</span> · Bangkok · June 2026
         </div>
-        <div class="color-desc">Pantone 485 C · CMYK (0,100,93,12)</div>
-      </div>
-      <div class="color-swatch">
-        <span class="label">▪ Secondary</span>
-        <div class="swatch-row">
-          <div class="swatch navy"></div>
-          <span class="color-hex">#1A1A2E <small>navy</small></span>
+        <h1>The Sovereign<br>Workspace</h1>
+        <p class="hero-tagline">Your files. Your model. Your machine. Nothing leaves the room.</p>
+        <div class="hero-meta">
+            <span><i class="fa-regular fa-clock"></i> 90–100 min</span>
+            <span><i class="fa-solid fa-users"></i> 20 participants</span>
+            <span><i class="fa-solid fa-laptop"></i> Windows · Intel CPU · 16GB RAM</span>
+            <span><i class="fa-solid fa-wifi-slash"></i> Works offline</span>
         </div>
-        <div class="color-desc">text · footer · dark elements</div>
-      </div>
-      <div class="color-swatch">
-        <span class="label">▪ Fond blanc</span>
-        <div class="swatch-row">
-          <div class="swatch white"></div>
-          <span class="color-hex">#FFFFFF <small>white</small></span>
-        </div>
-        <div class="color-desc">background · card · contrast</div>
-      </div>
-      <div class="color-swatch">
-        <span class="label">▪ Light grey</span>
-        <div class="swatch-row">
-          <div class="swatch light"></div>
-          <span class="color-hex">#F4F4F6 <small>grey</small></span>
-        </div>
-        <div class="color-desc">background · subtle surfaces</div>
-      </div>
     </div>
 
-    <!-- ========== SPÉCIFICATIONS TECHNIQUES ========== -->
-    <div class="specs-block">
-      <div class="spec-item">
-        <strong>RGB</strong>
-        <span class="value">225, 0, 15</span>
-      </div>
-      <div class="spec-item">
-        <strong>CMYK</strong>
-        <span class="value">0, 100, 93, 12</span>
-      </div>
-      <div class="spec-item">
-        <strong>Pantone</strong>
-        <span class="value">485 C</span>
-      </div>
-      <div class="spec-item">
-        <strong>Hex</strong>
-        <span class="value">#E1000F</span>
-      </div>
+    <!-- ===== NAV ===== -->
+    <div class="nav-pills">
+        <a class="nav-pill" href="#setup">Setup</a>
+        <a class="nav-pill" href="#context">What the model sees</a>
+        <a class="nav-pill" href="#two-types">Free AI explained</a>
+        <a class="nav-pill" href="#lessons">11 Lessons</a>
+        <a class="nav-pill" href="#prompts">Workshop prompts</a>
+        <a class="nav-pill" href="#stack">Stack</a>
+        <a class="nav-pill" href="#resources">Free resources</a>
     </div>
 
-    <!-- ========== FOOTER : RAPPEL VISUEL ========== -->
-    <div class="footer-note">
-      <span>🇫🇷 La French Tech · Bangkok chapter — <span style="font-weight:500;">Fond Blanc</span></span>
-      <span class="badge">#E1000F</span>
+    <!-- ===== MASTER QUESTION ===== -->
+    <div class="master-q">
+        <div class="eyebrow"><i class="fa-solid fa-circle-question"></i> The master question</div>
+        <div class="q">
+            <i class="fa-solid fa-quote-left"></i>What information was actually available to the model<br>at the moment it generated this answer?
+        </div>
     </div>
 
-    <!-- note : le fichier "Logo_FT_Bangkok_FondBlanc.png" correspond à ce visuel -->
-    <div style="margin-top: 1.2rem; font-size: 0.65rem; opacity:0.3; letter-spacing:0.02em; border-top:1px solid #f0f0f5; padding-top:0.8rem; display:flex; gap:1.2rem; flex-wrap:wrap;">
-      <span>Asset : Logo_FT_Bangkok_FondBlanc.png</span>
-      <span>•</span>
-      <span>white background · red &amp; navy identity</span>
-      <span>•</span>
-      <span>contrast : #E1000F / #FFFFFF</span>
+    <!-- ===== SETUP ===== -->
+    <div id="setup">
+        <div class="section-header">
+            <i class="fa-solid fa-circle-check"></i>
+            <h2>Pre-workshop setup</h2>
+            <span class="count">Do this at home · 3 days before</span>
+        </div>
+
+        <div class="card">
+            <div class="checklist">
+                <div class="check-item" onclick="this.classList.toggle('done')">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Install LM Studio</div>
+                        <div class="check-desc">Desktop GUI for running local models. No terminal required.</div>
+                        <a class="check-link" href="https://lmstudio.ai" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> lmstudio.ai</a>
+                    </div>
+                    <span class="check-tag tag-home">At home</span>
+                </div>
+
+                <div class="check-item" onclick="this.classList.toggle('done')">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Download Phi-4 Mini (2.3 GB)</div>
+                        <div class="check-desc">In LM Studio → Search icon → search below → download Q4_K_M file</div>
+                        <div class="code-wrap" style="margin-top:0.5rem">
+                            <div class="code-block"><span class="hl">microsoft/phi-4-mini-instruct-GGUF</span>
+File to select: phi-4-mini-instruct-Q4_K_M.gguf</div>
+                            <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                        </div>
+                    </div>
+                    <span class="check-tag tag-home">2.3 GB</span>
+                </div>
+
+                <div class="check-item" onclick="this.classList.toggle('done')">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Test the model</div>
+                        <div class="check-desc">LM Studio → Chat tab → select model → type this → expect a response in 15–20 sec</div>
+                        <div class="code-wrap" style="margin-top:0.5rem">
+                            <div class="code-block"><span class="hl">Say "ready" if you are working.</span></div>
+                            <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                        </div>
+                    </div>
+                    <span class="check-tag tag-home">Verify</span>
+                </div>
+
+                <div class="check-item" onclick="this.classList.toggle('done')">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Prepare 3–5 business documents</div>
+                        <div class="check-desc">Strategy notes, project briefs, meeting transcripts, client notes. PDF, Word, or text. Put them in one folder you can find quickly.</div>
+                    </div>
+                    <span class="check-tag tag-workshop">Bring</span>
+                </div>
+
+                <div class="check-item" onclick="this.classList.toggle('done')">
+                    <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+                    <div class="check-info">
+                        <div class="check-title">Optional: Coding demo setup</div>
+                        <div class="check-desc">Install Ollama + VS Code + Ollama Code extension for the free local Copilot demo</div>
+                        <div class="code-wrap" style="margin-top:0.5rem">
+                            <div class="code-block"><span class="comment"># 1. Install Ollama from ollama.com
+# 2. Open Command Prompt and run:</span>
+<span class="hl">ollama pull qwen2.5-coder:1.5b</span>
+<span class="comment"># 3. Install VS Code from code.visualstudio.com
+# 4. VS Code → Ctrl+Shift+X → search "Ollama Code" (publisher: cgaspard) → install</span></div>
+                            <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                        </div>
+                    </div>
+                    <span class="check-tag tag-optional">Optional</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <!-- ===== CONTEXT DIAGRAM ===== -->
+    <div id="context">
+        <div class="section-header">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h2>What the model actually sees</h2>
+        </div>
+
+        <div class="card">
+            <p style="margin-bottom:1.2rem">The most dangerous assumption you can bring to any AI system:</p>
+            <div style="background:var(--red-dim);border:1px solid rgba(225,0,15,0.2);border-radius:6px;padding:0.8rem 1.2rem;margin-bottom:1.2rem;font-weight:600;color:var(--red);font-size:0.9rem">
+                <i class="fa-solid fa-xmark" style="margin-right:0.5rem"></i>"When I upload a document, the model reads it."
+            </div>
+            <p style="margin-bottom:1.4rem">It does not. There is always a bottleneck between your document and the model.</p>
+
+            <div class="context-diagram">
+                <div class="diagram-flow">
+                    <div class="diagram-node">
+                        <div class="node-box node-doc"><i class="fa-regular fa-file-lines" style="margin-right:0.4rem"></i>Your document</div>
+                        <span class="node-label">501 pages · ~200k tokens</span>
+                    </div>
+                    <div class="diagram-arrow">context window limit · chunk selection · truncation · retrieval quality</div>
+                    <div class="diagram-node">
+                        <div class="node-box node-bottleneck"><i class="fa-solid fa-filter" style="margin-right:0.4rem"></i>Selection bottleneck</div>
+                        <span class="node-label" style="color:var(--red);font-weight:500">← most AI failures happen here</span>
+                    </div>
+                    <div class="diagram-arrow">only what fits passes through</div>
+                    <div class="diagram-node">
+                        <div class="node-box node-window"><i class="fa-solid fa-window-maximize" style="margin-right:0.4rem"></i>Context window</div>
+                        <span class="node-label">8%–16% of a 500-page doc</span>
+                    </div>
+                    <div class="diagram-arrow">only this reaches the model</div>
+                    <div class="diagram-node">
+                        <div class="node-box node-model"><i class="fa-solid fa-microchip" style="margin-right:0.4rem"></i>Phi-4 Mini — in your RAM</div>
+                        <span class="node-label">no internet · no cloud</span>
+                    </div>
+                    <div class="diagram-arrow">answer constrained by what was in the window</div>
+                    <div class="diagram-node">
+                        <div class="node-box node-answer"><i class="fa-regular fa-comment" style="margin-right:0.4rem"></i>Answer</div>
+                        <span class="node-label">not by what was in the document</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Context engineering image -->
+        <div class="visual-card">
+            <img src="https://storage.ghost.io/c/3f/df/3fdf6ed2-17ac-4b12-a693-8078bd13e748/content/images/2026/02/image-97.png"
+                 alt="Context window as working memory — Daily Dose of Data Science"
+                 onerror="this.parentElement.style.display='none'" />
+            <div class="visual-caption">
+                <i class="fa-solid fa-lightbulb"></i>
+                The context window is working memory. The core job: maximize signal under strict capacity constraints. — Daily Dose of Data Science, LLMOps Part 8
+            </div>
+        </div>
+
+        <div class="visual-card" style="margin-top:0.8rem">
+            <img src="https://storage.ghost.io/c/3f/df/3fdf6ed2-17ac-4b12-a693-8078bd13e748/content/images/2026/02/image-98.png"
+                 alt="Context types taxonomy — Daily Dose of Data Science"
+                 onerror="this.parentElement.style.display='none'" />
+            <div class="visual-caption">
+                <i class="fa-solid fa-sitemap"></i>
+                A practical taxonomy of context types: instruction, query, knowledge (RAG), memory, tool, user-specific, environmental. — Daily Dose of Data Science
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TWO TYPES OF FREE ===== -->
+    <div id="two-types">
+        <div class="section-header">
+            <i class="fa-solid fa-code-branch"></i>
+            <h2>The two types of "free" AI</h2>
+        </div>
+
+        <div class="card">
+            <p style="margin-bottom:1rem">Most people assume "free AI" means one thing. It does not. These are opposites.</p>
+
+            <div class="two-types">
+                <div class="type-card type-hosted">
+                    <div class="type-num">Type 1 · Someone else runs it</div>
+                    <div class="type-title">Hosted — You Call It</div>
+                    <ul class="type-items">
+                        <li>Google AI Studio, Groq, Mistral, OpenRouter</li>
+                        <li>Real frontier models with rate limits</li>
+                        <li>You give up your prompts — free tiers often train on what you send</li>
+                        <li>Convenient. Not private.</li>
+                    </ul>
+                </div>
+                <div class="type-card type-self">
+                    <div class="type-num">Type 2 · You download and run it</div>
+                    <div class="type-title">Self-hosted — What We Build Today</div>
+                    <ul class="type-items">
+                        <li>Fully private. Nothing leaves your machine.</li>
+                        <li>You pay in electricity and RAM, not data or dollars</li>
+                        <li>Model is a file on your disk — it never changes</li>
+                        <li>Deterministic. Versioned. Reproducible.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hidden-cost">
+                <div class="hc-title"><i class="fa-solid fa-skull-crossbones" style="margin-right:0.4rem"></i>The hidden cost of free hosted tiers</div>
+                <div class="hc-rule"><span class="r-icon r-danger"><i class="fa-solid fa-xmark"></i></span>Free hosted API = assume your prompts are training data</div>
+                <div class="hc-rule"><span class="r-icon r-danger"><i class="fa-solid fa-xmark"></i></span>Your code, business logic, and client data may end up in someone's next training run</div>
+                <div class="hc-rule"><span class="r-icon r-safe"><i class="fa-solid fa-check"></i></span>Self-hosted = 100% private by definition</div>
+                <div class="hc-rule"><span class="r-icon r-safe"><i class="fa-solid fa-check"></i></span>If it contains client data or credentials — self-host or pay for a privacy tier</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== AI SYSTEMS VISUAL ===== -->
+    <div class="section-header" style="margin-top:2.5rem">
+        <i class="fa-solid fa-brain"></i>
+        <h2>AI building blocks — a human analogy</h2>
+    </div>
+    <div class="visual-card">
+        <img src="data:image/jpeg;base64,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"
+             id="human-analogy-img"
+             alt="AI Systems: A Human Analogy — LLM Brain, RAG Brain+Books, MCP Connector, AI Agent Brain+Hands" />
+        <div class="visual-caption">
+            <i class="fa-solid fa-sitemap"></i>
+            LLM = Brain · RAG = Brain + Books · MCP = Standard Connector · AI Agent = Brain + Hands. These are connected building blocks that can work together in one AI system.
+        </div>
+    </div>
+
+    <!-- ===== 11 LESSONS ===== -->
+    <div id="lessons">
+        <div class="section-header">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>The 11 universal lessons of context</h2>
+            <span class="count">Apply to every LLM ever built</span>
+        </div>
+
+        <div class="card">
+            <p style="margin-bottom:1rem">These lessons do not change when you switch from Phi-4 Mini to ChatGPT, Copilot, or Claude. They are not lessons about local models. They are lessons about how language models process context.</p>
+
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-num">01</div>
+                    <div class="lesson-text">
+                        <strong>The window is not the document</strong>
+                        <span>The model sees a slice. Not the whole. Never the whole.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">02</div>
+                    <div class="lesson-text">
+                        <strong>Gaps fill with training data</strong>
+                        <span>When context is thin, the model invents plausible content. Confidently.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">03</div>
+                    <div class="lesson-text">
+                        <strong>Synthesis requires co-presence</strong>
+                        <span>Connecting two sections requires both to be in the same window at the same time.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">04</div>
+                    <div class="lesson-text">
+                        <strong>Chunk boundaries break reasoning</strong>
+                        <span>Information split across chunks cannot be reliably recombined by the model.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">05</div>
+                    <div class="lesson-text">
+                        <strong>Truncation is invisible</strong>
+                        <span>The model does not say "I only read 10% of your document." It just answers.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">06</div>
+                    <div class="lesson-text">
+                        <strong>Position matters</strong>
+                        <span>Content at the start and end of the window is recalled better than content in the middle.</span>
+                    </div>
+                </div>
+                <div class="lesson-card lesson-featured">
+                    <div class="lesson-num">07</div>
+                    <div class="lesson-text">
+                        <strong>Confidence is not accuracy</strong>
+                        <span>The model answers with the same confidence whether it saw the answer or invented it. This is the most dangerous lesson.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">08</div>
+                    <div class="lesson-text">
+                        <strong>You can engineer the context</strong>
+                        <span>Pasting text directly into the prompt is more reliable than attaching a file.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">09</div>
+                    <div class="lesson-text">
+                        <strong>Explicit grounding beats implicit retrieval</strong>
+                        <span>Telling the model exactly what section to use produces better answers than letting it choose.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">10</div>
+                    <div class="lesson-text">
+                        <strong>Multi-document context degrades rapidly</strong>
+                        <span>Each document you add shrinks the window available for each one.</span>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-num">11</div>
+                    <div class="lesson-text">
+                        <strong>Document identity is not automatic</strong>
+                        <span>The model does not reliably know which document it is reading from. You must tell it explicitly.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== RAG PIPELINE IMAGE ===== -->
+    <div class="visual-card" style="margin-top:1rem">
+        <img src="https://storage.ghost.io/c/3f/df/3fdf6ed2-17ac-4b12-a693-8078bd13e748/content/images/2026/02/image-101.png"
+             alt="Chunking strategies for RAG — Daily Dose of Data Science"
+             onerror="this.parentElement.style.display='none'" />
+        <div class="visual-caption">
+            <i class="fa-solid fa-scissors"></i>
+            Chunking is a core design decision. For summarization workloads, coverage replaces relevance as the optimization goal. — Daily Dose of Data Science, LLMOps Part 8
+        </div>
+    </div>
+
+    <div class="visual-card" style="margin-top:0.8rem">
+        <img src="https://storage.ghost.io/c/3f/df/3fdf6ed2-17ac-4b12-a693-8078bd13e748/content/images/2026/02/image-102.png"
+             alt="Retrieval stack: vector search, precision vs recall — Daily Dose of Data Science"
+             onerror="this.parentElement.style.display='none'" />
+        <div class="visual-caption">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            The standard retrieval stack: vector search as candidate generator, tuning precision vs. recall, contextual retrieval. — Daily Dose of Data Science
+        </div>
+    </div>
+
+    <!-- ===== WORKSHOP PROMPTS ===== -->
+    <div id="prompts">
+        <div class="section-header">
+            <i class="fa-solid fa-terminal"></i>
+            <h2>Workshop prompts</h2>
+            <span class="count">Copy · paste · run</span>
+        </div>
+
+        <!-- NATO DEMO PROMPTS -->
+        <div class="prompt-set">
+            <div class="prompt-set-label">NATO demo — facilitator runs these</div>
+
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-retrieval">Factual retrieval</span>
+                    <span class="prompt-title">Cyberspace Layers — AJP-3.20</span>
+                </div>
+                <div class="prompt-meta">Attach: AJP-3.20 only · Tests: Lessons 1, 6</div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
+You are a precise military doctrine analyst.
+Answer using only the attached AJP-3.20 document.
+
+<span class="hl">[Task]</span>
+What are the three layers of cyberspace as defined in AJP-3.20?
+For each layer, provide the exact name and one sentence describing
+what entities exist at that layer according to the document.
+
+<span class="hl">[Constraints]</span>
+Use only the attached document.
+For each layer, quote one exact phrase from the relevant paragraph.
+Do not use outside knowledge about cybersecurity or NATO doctrine.
+
+<span class="hl">[Output Format]</span>
+Three numbered items. Each: Layer name | Description | Quoted phrase.</div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-synthesis">Cross-section synthesis</span>
+                    <span class="prompt-title">Cyber and Traditional Domains — AJP-3.20</span>
+                </div>
+                <div class="prompt-meta">Attach: AJP-3.20 only · Tests: Lessons 3, 4</div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
+You are a military doctrine analyst.
+
+<span class="hl">[Task]</span>
+Using AJP-3.20, explain the relationship between cyberspace operations
+and the traditional domains of land, sea, air, and space.
+
+<span class="hl">[Constraints]</span>
+Cite specific paragraphs or sections.
+Do not use outside knowledge.
+
+<span class="hl">[Output Format]</span>
+Two paragraphs. First: how the document defines the relationship.
+Second: what the document says about command and coordination across domains.</div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-gap">Large doc stress test</span>
+                    <span class="prompt-title">Planning Phases — COPD (501 pages)</span>
+                </div>
+                <div class="prompt-meta">Attach: COPD only · Tests: Lessons 5, 7</div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
+You are a planning analyst reviewing NATO operational doctrine.
+
+<span class="hl">[Task]</span>
+According to the COPD, what are the six phases of the Joint Operations
+Planning Process? For each phase, give the primary output produced.
+
+<span class="hl">[Constraints]</span>
+Use only the attached document.
+Cite the section or page number for each phase.
+
+<span class="hl">[Output Format]</span>
+Six numbered items. Each: Phase name | Primary output | Section reference.</div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-injection">Context injection</span>
+                    <span class="prompt-title">Deliberate grounding — paste text directly</span>
+                </div>
+                <div class="prompt-meta">No file attachment — paste content directly · Tests: Lessons 8, 9</div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
+You are a planning analyst. The following is an extract from the COPD,
+Section 3.2, describing the Operational Design process:
+
+<span class="comment">[Paste 3–4 paragraphs of actual COPD text about Operational Design here]</span>
+
+<span class="hl">[Task]</span>
+Based only on the extract above, list the key inputs required for
+Operational Design according to the COPD. Then identify one gap:
+something the extract implies is needed but does not explicitly define.
+
+<span class="hl">[Constraints]</span>
+Use only the extract above, not the full document.
+Be explicit about what is stated versus what is implied.
+
+<span class="hl">[Output Format]</span>
+Part 1: Numbered list of explicit inputs.
+Part 2: One paragraph identifying the implied gap.</div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARTICIPANT PROMPTS -->
+        <div class="prompt-set">
+            <div class="prompt-set-label">Your own documents — three prompts to try</div>
+
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-retrieval">Prompt A — Factual retrieval</span>
+                </div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
+You are a precise analyst reviewing the attached document.
+
+<span class="hl">[Task]</span>
+What are the three most important decisions described in this document?
+For each decision, identify who made it and what outcome was expected.
+
+<span class="hl">[Constraints]</span>
+Use only the attached document. Quote one phrase per decision.
+Do not use outside knowledge.
+
+<span class="hl">[Output Format]</span>
+Three numbered items. Each: Decision | Who | Expected outcome | Quote.</div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-gap">Prompt B — Gap detection</span>
+                </div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
+You are a critical reviewer.
+
+<span class="hl">[Task]</span>
+After reading the attached document, identify one assumption the document
+makes but never explicitly justifies. Then explain what risk that
+unjustified assumption creates for the project or decision described.
+
+<span class="hl">[Constraints]</span>
+Stay within the document. Name the section where the assumption appears.
+
+<span class="hl">[Output Format]</span>
+Part 1: The assumption (one sentence).
+Part 2: Where it appears (section or page reference).
+Part 3: The risk it creates (two sentences).</div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom:0.8rem">
+                <div class="prompt-header">
+                    <span class="prompt-badge pb-action">Prompt C — Action extraction</span>
+                </div>
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>
+You are a project analyst.
+
+<span class="hl">[Task]</span>
+Extract all action items from the attached document.
+For each action, identify the responsible party if named and the deadline
+if stated. Mark missing information explicitly as "not stated."
+
+<span class="hl">[Output Format]</span>
+Numbered list. Each: Action | Owner | Deadline.</div>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOUR-PART ANATOMY -->
+        <div class="section-header">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <h2>The four-part prompt anatomy</h2>
+        </div>
+        <div class="card">
+            <div class="code-wrap">
+                <div class="code-block"><span class="hl">[System Context]</span>  <span class="comment">→ who the model is and what it is working with</span>
+<span class="hl">[Task]</span>            <span class="comment">→ one clear verb: extract, identify, compare, summarize</span>
+<span class="hl">[Constraints]</span>    <span class="comment">→ what to use, what to avoid, what to name explicitly</span>
+<span class="hl">[Output Format]</span>  <span class="comment">→ exact structure — no ambiguity</span></div>
+                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+            </div>
+            <p style="margin-top:0.8rem;font-size:0.78rem">Common errors: task has two verbs (pick one) · no output format (you lose control) · no constraints (model fills gaps) · generic system context (give it a specific role)</p>
+        </div>
+    </div>
+
+    <!-- ===== STACK ===== -->
+    <div id="stack">
+        <div class="section-header">
+            <i class="fa-solid fa-layer-group"></i>
+            <h2>The workshop stack</h2>
+        </div>
+
+        <div class="card">
+            <table class="stack-table">
+                <thead>
+                    <tr><th>Tool</th><th>Role</th><th>Why this choice</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>LM Studio</strong></td>
+                        <td>Local model GUI</td>
+                        <td>Desktop app. No Docker. No terminal. Built-in document attach. CPU inference out of the box.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phi-4 Mini Q4_K_M</strong></td>
+                        <td>Primary model</td>
+                        <td>3.8B parameters. 2.3GB on disk. Best CPU-only model in 2026. 10–12 tok/s on 13th gen i7.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Qwen2.5 3B Q4_K_M</strong></td>
+                        <td>Backup model</td>
+                        <td>If Phi-4 Mini has issues on any machine. Similar speed profile.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ollama + qwen2.5-coder:1.5b</strong></td>
+                        <td>Coding demo only</td>
+                        <td>VS Code extension block. Optional. Requires pre-install.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:1rem">
+                <h3 style="margin-bottom:0.7rem">Hardware reality</h3>
+                <table class="hw-table">
+                    <thead>
+                        <tr><th>Model</th><th>Speed</th><th>Verdict</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Phi-4 Mini Q4_K_M (3.8B)</td><td>8–12 tok/s</td><td class="badge-ok">✓ Usable</td></tr>
+                        <tr><td>Qwen2.5 3B Q4_K_M</td><td>8–10 tok/s</td><td class="badge-ok">✓ Backup</td></tr>
+                        <tr><td>Qwen2.5 7B</td><td>2–4 tok/s</td><td class="badge-no">✗ Too slow for live</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size:0.75rem;margin-top:0.6rem">A paragraph response takes 20–30 seconds. Use the wait time to read the output carefully. That is not wasted time. That is evaluation time.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== WHERE TO GO FROM HERE ===== -->
+    <div class="section-header" style="margin-top:2.5rem">
+        <i class="fa-solid fa-map"></i>
+        <h2>Where to go from here</h2>
+    </div>
+    <div class="card">
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-time">Today</div>
+                <div class="tl-content">
+                    <div class="tl-title">Phi-4 Mini on CPU</div>
+                    <div class="tl-desc">Document analysis, private prompts, offline work</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-time">Next</div>
+                <div class="tl-content">
+                    <div class="tl-title">GPU machine → Mistral 7B or Llama 3.1 8B</div>
+                    <div class="tl-desc">General tasks, longer context, 10x faster inference</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-time">Advanced</div>
+                <div class="tl-content">
+                    <div class="tl-title">Graph RAG</div>
+                    <div class="tl-desc">Cross-document reasoning at scale — connects information across many files</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-time">Pro</div>
+                <div class="tl-content">
+                    <div class="tl-title">Fine-tuning</div>
+                    <div class="tl-desc">Adapt a model to your domain, your language, your documents</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== RESOURCES ===== -->
+    <div id="resources">
+        <div class="section-header">
+            <i class="fa-solid fa-gift"></i>
+            <h2>Free AI resources</h2>
+        </div>
+
+        <div class="card">
+            <h3 style="margin-bottom:0.8rem">Hosted free tiers — someone else runs it</h3>
+            <div class="resource-grid">
+                <a class="resource-item" href="https://aistudio.google.com" target="_blank" style="text-decoration:none">
+                    <i class="fa-brands fa-google"></i>
+                    <div><div class="r-name">Google AI Studio</div><div class="r-desc">Gemini 2.5 Pro · 1M token context</div></div>
+                    <span class="r-tag rt-hosted">Hosted</span>
+                </a>
+                <a class="resource-item" href="https://console.groq.com" target="_blank" style="text-decoration:none">
+                    <i class="fa-solid fa-bolt"></i>
+                    <div><div class="r-name">Groq</div><div class="r-desc">Llama 3.3 70B · very fast inference</div></div>
+                    <span class="r-tag rt-hosted">Hosted</span>
+                </a>
+                <a class="resource-item" href="https://console.mistral.ai" target="_blank" style="text-decoration:none">
+                    <i class="fa-solid fa-wind"></i>
+                    <div><div class="r-name">Mistral La Plateforme</div><div class="r-desc">European data compliance</div></div>
+                    <span class="r-tag rt-hosted">Hosted</span>
+                </a>
+                <a class="resource-item" href="https://openrouter.ai" target="_blank" style="text-decoration:none">
+                    <i class="fa-solid fa-shuffle"></i>
+                    <div><div class="r-name">OpenRouter</div><div class="r-desc">50+ models · free tier aggregator</div></div>
+                    <span class="r-tag rt-hosted">Hosted</span>
+                </a>
+            </div>
+
+            <h3 style="margin-bottom:0.8rem;margin-top:1.2rem">Self-hosted — nothing leaves your machine</h3>
+            <div class="resource-grid">
+                <a class="resource-item" href="https://lmstudio.ai" target="_blank" style="text-decoration:none">
+                    <i class="fa-solid fa-desktop"></i>
+                    <div><div class="r-name">LM Studio</div><div class="r-desc">GUI · document attach · CPU OK</div></div>
+                    <span class="r-tag rt-self">Self</span>
+                </a>
+                <a class="resource-item" href="https://ollama.com" target="_blank" style="text-decoration:none">
+                    <i class="fa-solid fa-terminal"></i>
+                    <div><div class="r-name">Ollama</div><div class="r-desc">CLI · API · VS Code integration</div></div>
+                    <span class="r-tag rt-self">Self</span>
+                </a>
+                <a class="resource-item" href="https://huggingface.co" target="_blank" style="text-decoration:none">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <div><div class="r-name">Hugging Face</div><div class="r-desc">Model downloads · Spaces</div></div>
+                    <span class="r-tag rt-self">Self</span>
+                </a>
+            </div>
+
+            <h3 style="margin-bottom:0.8rem;margin-top:1.2rem">One-time credits</h3>
+            <div class="resource-grid">
+                <a class="resource-item" href="https://aws.amazon.com/bedrock" target="_blank" style="text-decoration:none">
+                    <i class="fa-brands fa-aws"></i>
+                    <div><div class="r-name">AWS Bedrock</div><div class="r-desc">$300 one-time credit · multiple models</div></div>
+                    <span class="r-tag rt-credit">Credit</span>
+                </a>
+                <div class="resource-item">
+                    <i class="fa-solid fa-robot"></i>
+                    <div><div class="r-name">AgentRouter</div><div class="r-desc">One-time free tier credit</div></div>
+                    <span class="r-tag rt-credit">Credit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer">
+        <div class="footer-title">Your files. Your model. Your machine.</div>
+        <p>Nothing leaves the room.</p>
+        <div class="ft-badge">🇫🇷 La French Tech · Bangkok</div>
+        <p style="margin-top:0.8rem;font-size:0.72rem">The Sovereign Workspace · June 2026</p>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Human analogy image fallback
+    const img = document.getElementById('human-analogy-img');
+    img.onerror = function() {
+        const card = img.closest('.visual-card');
+        if (card) {
+            const fallback = document.createElement('div');
+            fallback.style.cssText = 'padding:2rem;text-align:center;background:var(--bg-elevated);color:var(--text-muted);font-size:0.82rem;';
+            fallback.innerHTML = `<i class="fa-solid fa-sitemap" style="font-size:2rem;color:var(--accent);display:block;margin-bottom:0.8rem"></i>
+            <strong style="color:var(--text);display:block;margin-bottom:0.4rem">AI Systems: A Human Analogy</strong>
+            LLM = Brain (understands and generates language)<br>
+            RAG = Brain + Books (retrieves and uses trusted knowledge)<br>
+            MCP = Standard Connector (connects AI to tools and data)<br>
+            AI Agent = Brain + Hands (decides steps, uses tools, takes actions)`;
+            card.insertBefore(fallback, img);
+            img.style.display = 'none';
+        }
+    };
+});
+
+// Checklist persistence
+document.querySelectorAll('.check-item').forEach((item, i) => {
+    const key = 'check_' + i;
+    if (localStorage.getItem(key)) item.classList.add('done');
+    item.addEventListener('click', function() {
+        this.classList.toggle('done');
+        localStorage.setItem(key, this.classList.contains('done') ? '1' : '');
+    });
+    // Remove inline onclick to prevent double binding
+    item.removeAttribute('onclick');
+});
+
+// Copy function for code blocks
+function copyBlock(btn) {
+    const block = btn.previousElementSibling;
+    if (!block) return;
+    navigator.clipboard.writeText(block.innerText).then(() => {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { 
+            btn.textContent = 'Copy'; 
+            btn.classList.remove('copied'); 
+        }, 1800);
+    }).catch(() => {
+        // Fallback for older browsers
+        const range = document.createRange();
+        range.selectNode(block);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { 
+            btn.textContent = 'Copy'; 
+            btn.classList.remove('copied'); 
+        }, 1800);
+    });
+}
+</script>
 </body>
 </html>
