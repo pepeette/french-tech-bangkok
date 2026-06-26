@@ -981,17 +981,22 @@ File to select: phi-4-mini-instruct-Q4_K_M.gguf</div>
         </div>
     </div>
 
-    <!-- ===== AI SYSTEMS VISUAL (always visible) ===== -->
-    <div class="section-header" style="margin-top:2.5rem">
-        <i class="fa-solid fa-brain"></i>
-        <h2>AI building blocks — a human analogy</h2>
-    </div>
-    <div class="visual-card">
-        <img src="images/LLMtypes.jpg"
-             alt="AI Systems: A Human Analogy — LLM Brain, RAG Brain+Books, MCP Connector, AI Agent Brain+Hands" />
-        <div class="visual-caption">
-            <i class="fa-solid fa-sitemap"></i>
-            LLM = Brain · RAG = Brain + Books · MCP = Standard Connector · AI Agent = Brain + Hands. These are connected building blocks that can work together in one AI system.
+    <!-- ===== AI SYSTEMS VISUAL (collapsible, collapsed by default) ===== -->
+    <div class="collapsible-section" id="ai-analogy">
+        <div class="section-header" onclick="toggleSection(this)" style="margin-top:2.5rem">
+            <i class="fa-solid fa-brain"></i>
+            <h2>AI building blocks — a human analogy</h2>
+            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+        <div class="section-content">
+            <div class="visual-card">
+                <img src="images/LLMtypes.jpg"
+                     alt="AI Systems: A Human Analogy — LLM Brain, RAG Brain+Books, MCP Connector, AI Agent Brain+Hands" />
+                <div class="visual-caption">
+                    <i class="fa-solid fa-sitemap"></i>
+                    LLM = Brain · RAG = Brain + Books · MCP = Standard Connector · AI Agent = Brain + Hands. These are connected building blocks that can work together in one AI system.
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1087,27 +1092,27 @@ File to select: phi-4-mini-instruct-Q4_K_M.gguf</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- ===== RAG PIPELINE IMAGE (outside collapsible) ===== -->
-    <div class="visual-card" style="margin-top:1rem">
-        <img src="images/image-101.png"
-             alt="Chunking strategies for RAG — Daily Dose of Data Science"
-             onerror="this.parentElement.style.display='none'" />
-        <div class="visual-caption">
-            <i class="fa-solid fa-scissors"></i>
-            Chunking is a core design decision. For summarization workloads, coverage replaces relevance as the optimization goal. — Daily Dose of Data Science, LLMOps Part 8
-        </div>
-    </div>
+            <!-- RAG PIPELINE IMAGES — now inside the lessons collapsible -->
+            <div class="visual-card" style="margin-top:1rem">
+                <img src="images/image-101.png"
+                     alt="Chunking strategies for RAG — Daily Dose of Data Science"
+                     onerror="this.parentElement.style.display='none'" />
+                <div class="visual-caption">
+                    <i class="fa-solid fa-scissors"></i>
+                    Chunking is a core design decision. For summarization workloads, coverage replaces relevance as the optimization goal. — Daily Dose of Data Science, LLMOps Part 8
+                </div>
+            </div>
 
-    <div class="visual-card" style="margin-top:0.8rem">
-        <img src="images/image-102.png"
-             alt="Retrieval stack: vector search, precision vs recall — Daily Dose of Data Science"
-             onerror="this.parentElement.style.display='none'" />
-        <div class="visual-caption">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            The standard retrieval stack: vector search as candidate generator, tuning precision vs. recall, contextual retrieval. — Daily Dose of Data Science
+            <div class="visual-card" style="margin-top:0.8rem">
+                <img src="images/image-102.png"
+                     alt="Retrieval stack: vector search, precision vs recall — Daily Dose of Data Science"
+                     onerror="this.parentElement.style.display='none'" />
+                <div class="visual-caption">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    The standard retrieval stack: vector search as candidate generator, tuning precision vs. recall, contextual retrieval. — Daily Dose of Data Science
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1302,20 +1307,25 @@ Numbered list. Each: Action | Owner | Deadline.</div>
         </div>
     </div>
 
-    <!-- ===== FOUR-PART PROMPT ANATOMY (outside collapsible) ===== -->
-    <div class="section-header">
-        <i class="fa-solid fa-puzzle-piece"></i>
-        <h2>The four-part prompt anatomy</h2>
-    </div>
-    <div class="card">
-        <div class="code-wrap">
-            <div class="code-block"><span class="hl">[System Context]</span>  <span class="comment">→ who the model is and what it is working with</span>
+    <!-- ===== FOUR-PART PROMPT ANATOMY (collapsible, collapsed by default) ===== -->
+    <div class="collapsible-section" id="prompt-anatomy">
+        <div class="section-header" onclick="toggleSection(this)">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <h2>The four-part prompt anatomy</h2>
+            <span class="toggle-icon"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+        <div class="section-content">
+            <div class="card">
+                <div class="code-wrap">
+                    <div class="code-block"><span class="hl">[System Context]</span>  <span class="comment">→ who the model is and what it is working with</span>
 <span class="hl">[Task]</span>            <span class="comment">→ one clear verb: extract, identify, compare, summarize</span>
 <span class="hl">[Constraints]</span>    <span class="comment">→ what to use, what to avoid, what to name explicitly</span>
 <span class="hl">[Output Format]</span>  <span class="comment">→ exact structure — no ambiguity</span></div>
-            <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                    <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                </div>
+                <p style="margin-top:0.8rem;font-size:0.78rem">Common errors: task has two verbs (pick one) · no output format (you lose control) · no constraints (model fills gaps) · generic system context (give it a specific role)</p>
+            </div>
         </div>
-        <p style="margin-top:0.8rem;font-size:0.78rem">Common errors: task has two verbs (pick one) · no output format (you lose control) · no constraints (model fills gaps) · generic system context (give it a specific role)</p>
     </div>
 
     <!-- ===== STACK (collapsible, collapsed by default) ===== -->
