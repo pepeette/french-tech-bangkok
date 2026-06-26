@@ -68,100 +68,99 @@
         a:hover { text-decoration: underline; }
         p { color: var(--text-muted); line-height: 1.7; }
 
-/* ===== HERO ===== */
-.hero {
-    padding: 2rem 0 2rem;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 2.5rem;
-    background: var(--ft-white);
-    border-radius: var(--radius) var(--radius) 0 0;
-}
-
-.hero-logo-title {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.hero-logo {
-    flex-shrink: 0;
-}
-
-.hero-logo svg {
-    width: 80px;
-    height: 80px;
-    display: block;
-}
-
-.hero-content {
-    flex: 1;
-    min-width: 0;
-}
-
-.hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    margin-bottom: 0.3rem;
-}
-
-.hero-eyebrow .dot-sep {
-    color: var(--border);
-    font-weight: 300;
-}
-
-.hero-eyebrow i {
-    color: var(--accent);
-    font-size: 0.7rem;
-}
-
-.hero h1 {
-    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    color: var(--ft-navy);
-    margin-bottom: 0.2rem;
-}
-
-.hero-tagline {
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-bottom: 0.8rem;
-    max-width: 560px;
-}
-
-.hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem 1.2rem;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-}
-.hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
-.hero-meta i { color: var(--accent); font-size: 0.7rem; }
-
-@media (max-width: 640px) {
-    .hero-logo-title {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    .hero-logo svg {
-        width: 60px;
-        height: 60px;
-    }
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-    .hero-meta {
-        gap: 0.3rem 0.8rem;
-        font-size: 0.7rem;
-    }
-}
+        /* ===== HERO ===== */
+        .hero {
+            padding: 2rem 0 2rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2.5rem;
+            background: var(--ft-white);
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        
+        .hero-logo-title {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .hero-logo {
+            flex-shrink: 0;
+        }
+        
+        .hero-logo img {
+            height: 80px;          /* Adjust to match your logo's aspect ratio */
+            width: auto;
+            display: block;
+        }
+        
+        .hero-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+        
+        .hero-eyebrow .dot-sep {
+            color: var(--border);
+            font-weight: 300;
+        }
+        
+        .hero-eyebrow i {
+            color: var(--accent);
+            font-size: 0.7rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            color: var(--ft-navy);
+            margin-bottom: 0.2rem;
+        }
+        
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            max-width: 560px;
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 1.2rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+        .hero-meta i { color: var(--accent); font-size: 0.7rem; }
+        
+        @media (max-width: 640px) {
+            .hero-logo-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .hero-logo img {
+                height: 60px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero-meta {
+                gap: 0.3rem 0.8rem;
+                font-size: 0.7rem;
+            }
+        }
 
         /* ===== MASTER QUESTION ===== */
         .master-q {
@@ -697,13 +696,7 @@
     <div class="hero-logo-title">
         <!-- Left: Logo -->
         <div class="hero-logo">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="38" fill="#1A1A2E" stroke="#E1000F" stroke-width="2"/>
-                <text x="40" y="32" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.5">LA</text>
-                <text x="40" y="50" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#E1000F" text-anchor="middle" letter-spacing="0.5">FT</text>
-                <rect x="18" y="54" width="44" height="2" rx="1" fill="#E1000F" opacity="0.5"/>
-                <text x="40" y="64" font-family="Inter, sans-serif" font-size="7" font-weight="600" fill="#6b7d99" text-anchor="middle" letter-spacing="0.8">BANGKOK</text>
-            </svg>
+            <img src="images/Logo_FT_Bangkok_FondBlanc.png" alt="La French Tech Bangkok" />
         </div>
         
         <!-- Right: Title Content -->
