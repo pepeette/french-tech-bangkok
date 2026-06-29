@@ -131,39 +131,40 @@
             margin-top: 0.6rem;
         }
 
-        /* ─── WHAT YOU BUILD ─── */
-        .acts {
+        /* ─── THREE ACTS ─── */
+        .act-bar {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 0.5rem;
-            margin: 0.8rem 0;
+            gap: 0.6rem;
+            margin: 0.8rem 0 1.2rem;
         }
-        .act {
-            background: var(--elevated);
-            border: 1px solid var(--border-soft);
-            border-radius: var(--r-sm);
-            padding: 1rem 1.1rem;
-            position: relative;
+        .act-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 1.2rem 1.2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.15s, box-shadow 0.15s;
         }
-        .act-num {
+        .act-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .act-label {
             font-size: 0.55rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--red);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.4rem;
         }
-        .act-title { font-weight: 700; font-size: 0.88rem; color: var(--text); margin-bottom: 0.25rem; }
-        .act-desc { font-size: 0.75rem; color: var(--muted); }
-        .act.act-featured {
-            background: var(--navy);
-            border-color: transparent;
+        .act-title { font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 0.25rem; }
+        .act-desc { font-size: 0.78rem; color: var(--muted); }
+        .act-icon { font-size: 1.2rem; color: var(--red); margin-bottom: 0.3rem; }
+        .act-card.act-highlight {
+            border-color: var(--red);
+            background: var(--red-dim);
         }
-        .act.act-featured .act-num { color: rgba(255,255,255,0.4); }
-        .act.act-featured .act-title { color: #fff; }
-        .act.act-featured .act-desc { color: rgba(255,255,255,0.55); }
+        .act-card.act-highlight .act-label { color: var(--red); }
 
-        @media (max-width: 640px) { .acts { grid-template-columns: 1fr; } }
+        @media (max-width: 640px) { .act-bar { grid-template-columns: 1fr; } }
 
         /* ─── SECTION HEADER ─── */
         .sh {
@@ -643,6 +644,19 @@
             </div>
         </div>
     </div>
+
+    <!-- ─── HOOK ─── -->
+    <div style="background:var(--elevated);border-left:3px solid var(--red);border-radius:var(--r-sm);padding:0.8rem 1.2rem;margin-bottom:1rem;">
+        <p style="font-size:0.95rem;color:var(--text);font-weight:500;">
+            <i class="fa-regular fa-clock" style="color:var(--red);margin-right:0.4rem;"></i>
+            How long does it take you to find one specific answer in a document like this?
+        </p>
+        <p style="font-size:0.82rem;color:var(--red);font-weight:600;margin-top:0.2rem;">
+            <i class="fa-solid fa-arrow-right" style="margin-right:0.4rem;"></i>
+            Tonight that becomes thirty seconds. On your own machine. No internet. No cloud.
+        </p>
+    </div>
+
     <h1>The Sovereign<br>Workspace</h1>
     <p class="hero-tagline">Your documents. Your model. Your machine. Nothing leaves the room.</p>
 </div>
@@ -655,22 +669,25 @@
 </div>
 
 <!-- ─── THREE ACTS ─── -->
-<div class="sh"><i class="fa-solid fa-film"></i><h2>What happens tonight</h2></div>
-<div class="acts">
-    <div class="act">
-        <div class="act-num">Act One</div>
-        <div class="act-title">Small document. It works.</div>
-        <div class="act-desc">You attach a 2-page policy. The model reads all of it. Real answers. Thirty seconds.</div>
+<div class="sh"><i class="fa-solid fa-film"></i><h2>The story in three acts</h2></div>
+<div class="act-bar">
+    <div class="act-card">
+        <div class="act-icon"><i class="fa-regular fa-circle-check"></i></div>
+        <div class="act-label">Act One</div>
+        <div class="act-title">It works.</div>
+        <div class="act-desc">Small document. Local model. Private. Real answer. Thirty seconds.</div>
     </div>
-    <div class="act act-featured">
-        <div class="act-num">Act Two</div>
-        <div class="act-title">Large document. It breaks.</div>
-        <div class="act-desc">You attach a 501-page document. The model reads 8% of it. Confident wrong answer. You see exactly why.</div>
+    <div class="act-card act-highlight">
+        <div class="act-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="act-label">Act Two</div>
+        <div class="act-title">It breaks.</div>
+        <div class="act-desc">Large document. Confident wrong answer. You see exactly why.</div>
     </div>
-    <div class="act">
-        <div class="act-num">Act Three</div>
-        <div class="act-title">RAG. It works again.</div>
-        <div class="act-desc">Same large document. AnythingLLM. Private RAG. Correct answer. You own this setup.</div>
+    <div class="act-card">
+        <div class="act-icon"><i class="fa-solid fa-wrench"></i></div>
+        <div class="act-label">Act Three</div>
+        <div class="act-title">RAG fixes it.</div>
+        <div class="act-desc">Same large document. Private RAG. Correct answer. You own this setup.</div>
     </div>
 </div>
 
@@ -753,7 +770,7 @@
         <div class="rule">
             <div class="rule-n">1</div>
             <div class="rule-title">Under 20 pages → attach the file</div>
-            <div class="rule-desc">The model sees most of the content. It works reliably.</div>
+            <div class="rule-desc">The model sees most of the content. It works.</div>
         </div>
         <div class="rule">
             <div class="rule-n">2</div>
