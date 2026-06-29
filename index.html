@@ -48,6 +48,7 @@
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* ===== HERO ===== */
         .hero {
             padding: 2rem 0 1.5rem;
             border-bottom: 1px solid var(--border);
@@ -55,8 +56,9 @@
             background: var(--bg-card);
             border-radius: var(--radius) var(--radius) 0 0;
         }
-        .hero-logo-title { display: flex; align-items: center; gap: 2rem; }
-        .hero-logo img { height: 70px; width: auto; }
+        .hero-top { display: flex; align-items: center; gap: 2rem; margin-bottom: 1.2rem; }
+        .hero-logo img { height: 60px; width: auto; }
+
         .hero h1 { margin-bottom: 0.2rem; }
         .hero-tagline { font-size: 1.05rem; color: var(--text-muted); max-width: 580px; }
         .hero-meta { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem; }
@@ -64,10 +66,58 @@
         .hero-meta i { color: var(--accent); }
 
         @media (max-width: 640px) {
-            .hero-logo-title { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .hero-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
             .hero-logo img { height: 50px; }
         }
 
+        /* ===== MASTER QUESTION ===== */
+        .master-q {
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 1.5rem 2rem;
+            margin: 0 0 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .master-q .label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+        .master-q .q {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 700;
+            color: var(--ft-navy);
+            line-height: 1.4;
+        }
+        .master-q .q i { color: var(--accent); margin-right: 0.3rem; }
+        .master-q .sub {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-top: 0.3rem;
+            font-weight: 400;
+        }
+
+        /* ===== HOOK ===== */
+        .hook {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--accent);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .hook p {
+            font-size: 0.95rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+        .hook p i { color: var(--accent); margin-right: 0.4rem; }
+
+        /* ===== CARD ===== */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -77,11 +127,23 @@
             box-shadow: var(--shadow);
         }
 
+        /* ===== SECTION HEADER ===== */
         .section-header { display: flex; align-items: center; gap: 0.6rem; margin: 1.8rem 0 0.8rem; }
         .section-header i { color: var(--accent); font-size: 1rem; }
         .section-header h2 { margin: 0; font-size: 1rem; }
+        .section-header .badge {
+            font-size: 0.55rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.1rem 0.6rem;
+            border-radius: 10px;
+            background: var(--accent-dim);
+            color: var(--accent);
+            margin-left: auto;
+        }
 
-        /* FILTER */
+        /* ===== FILTER ===== */
         .filter-box {
             background: var(--bg-elevated);
             border: 1px solid var(--border);
@@ -108,7 +170,7 @@
             .filter-box .for { border-bottom: 1px solid var(--border); padding-bottom: 0.8rem; margin-bottom: 0.8rem; }
         }
 
-        /* VISUAL */
+        /* ===== VISUAL ===== */
         .visual-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -135,7 +197,7 @@
         .visual-caption i { color: var(--accent); }
         .visual-caption strong { color: var(--text); }
 
-        /* RULES */
+        /* ===== RULES ===== */
         .rules {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -148,7 +210,9 @@
             border-radius: var(--radius-sm);
             padding: 0.8rem 1rem;
             text-align: center;
+            transition: all 0.15s;
         }
+        .rule-card:hover { border-color: var(--accent); }
         .rule-card .num {
             font-size: 1.5rem;
             font-weight: 800;
@@ -167,7 +231,7 @@
 
         @media (max-width: 640px) { .rules { grid-template-columns: 1fr; } }
 
-        /* CHECKLIST */
+        /* ===== CHECKLIST ===== */
         .checklist { display: flex; flex-direction: column; gap: 0.4rem; }
         .check-item {
             display: flex; align-items: flex-start; gap: 0.8rem;
@@ -191,7 +255,7 @@
         .check-desc { font-size: 0.75rem; color: var(--text-muted); }
         .check-tag { flex-shrink: 0; align-self: center; font-size: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.1rem 0.5rem; border-radius: 6px; background: rgba(225,0,15,0.08); color: var(--accent); }
 
-        /* CODE */
+        /* ===== CODE ===== */
         .code-wrap {
             background: var(--bg-code);
             border: 1px solid var(--border);
@@ -222,7 +286,7 @@
         .copy-btn:hover { background: var(--accent); color: #fff; }
         .copy-btn.copied { background: var(--green); color: #fff; }
 
-        /* TWO TYPES */
+        /* ===== TWO TYPES ===== */
         .two-types { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin: 0.6rem 0; }
         .type-card {
             background: var(--bg-elevated);
@@ -236,6 +300,57 @@
 
         @media (max-width: 640px) { .two-types { grid-template-columns: 1fr; } }
 
+        /* ===== THREAT MODEL ===== */
+        .threat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem;
+            margin: 0.6rem 0;
+        }
+        .threat-item {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm);
+            padding: 0.6rem 0.8rem;
+        }
+        .threat-item .fail {
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--accent);
+        }
+        .threat-item .what {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) { .threat-grid { grid-template-columns: 1fr; } }
+
+        /* ===== RESOURCES ===== */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.4rem;
+        }
+        .resource-item {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm);
+            padding: 0.4rem 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            transition: all 0.15s;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .resource-item:hover { border-color: var(--accent-border); text-decoration: none; }
+        .resource-item i { color: var(--accent); font-size: 0.7rem; width: 0.9rem; text-align: center; flex-shrink: 0; }
+
+        @media (max-width: 640px) { .resource-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 420px) { .resource-grid { grid-template-columns: 1fr; } }
+
+        /* ===== FOOTER ===== */
         .footer {
             padding: 1.5rem 0 0;
             border-top: 1px solid var(--border);
@@ -266,50 +381,27 @@
         }
         .danger-box strong { color: var(--accent); }
 
-        .master-q {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1rem 1.5rem;
-            margin: 0 0 1rem;
-            text-align: center;
-        }
-        .master-q .q {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--ft-navy);
-        }
-        .master-q .q i { color: var(--accent); margin-right: 0.3rem; }
-        .master-q .sub {
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            margin-top: 0.2rem;
-            font-weight: 400;
-        }
-
-        .resource-grid {
+        .timeline {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0.4rem;
+            grid-template-columns: auto 1fr;
+            gap: 0.3rem 1rem;
+            margin: 0.6rem 0;
         }
-        .resource-item {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border-soft);
-            border-radius: var(--radius-sm);
-            padding: 0.4rem 0.7rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.75rem;
-            transition: all 0.15s;
-            text-decoration: none;
+        .timeline .time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 600;
+            padding-top: 0.1rem;
+            text-align: right;
+        }
+        .timeline .what {
+            font-size: 0.85rem;
             color: var(--text);
+            padding: 0.1rem 0;
         }
-        .resource-item:hover { border-color: var(--accent-border); text-decoration: none; }
-        .resource-item i { color: var(--accent); font-size: 0.7rem; width: 0.9rem; text-align: center; flex-shrink: 0; }
-
-        @media (max-width: 640px) { .resource-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 420px) { .resource-grid { grid-template-columns: 1fr; } }
+        .timeline .what span { color: var(--text-muted); font-size: 0.78rem; }
+        .timeline .what .highlight { color: var(--accent); font-weight: 600; }
     </style>
 </head>
 <body>
@@ -318,21 +410,38 @@
 
 <!-- ===== HERO ===== -->
 <div class="hero">
-    <div class="hero-logo-title">
+    <div class="hero-top">
         <div class="hero-logo">
             <img src="images/Logo_FT_Bangkok_FondBlanc.png" alt="La French Tech Bangkok" onerror="this.style.display='none'" />
         </div>
         <div>
-            <h1>The Sovereign Workspace</h1>
-            <p class="hero-tagline">Your files. Your model. Your machine. Nothing leaves the room.</p>
-            <div class="hero-meta">
+            <div class="hero-meta" style="margin-top:0;">
                 <span><i class="fa-regular fa-calendar"></i> July 15, 2026 · 6:00 PM</span>
                 <span><i class="fa-regular fa-clock"></i> 60 min · <strong style="color:var(--accent);">80% hands-on</strong></span>
                 <span><i class="fa-solid fa-laptop"></i> Windows · Intel CPU · 16GB RAM</span>
-                <span><i class="fa-solid fa-wifi-slash"></i> Works offline</span>
             </div>
         </div>
     </div>
+
+    <!-- ===== HOOK — The opener ===== -->
+    <div class="hook">
+        <p><i class="fa-regular fa-clock"></i> How long does it take you to find the answer to one specific question in a document like this?</p>
+        <p style="font-size:0.85rem;margin-top:0.3rem;font-weight:400;color:var(--accent);">
+            <i class="fa-solid fa-arrow-right"></i> Tonight that becomes <strong>thirty seconds</strong>. Privately. For free. On your own machine.
+        </p>
+    </div>
+
+    <h1>The Sovereign Workspace</h1>
+    <p class="hero-tagline">Your files. Your model. Your machine. Nothing leaves the room.</p>
+</div>
+
+<!-- ===== MASTER QUESTION — Prominent ===== -->
+<div class="master-q">
+    <div class="label"><i class="fa-regular fa-circle-question"></i> The master question</div>
+    <div class="q">
+        <i class="fa-solid fa-quote-left"></i> What information was actually available to the model<br />at the moment it generated this answer?
+    </div>
+    <div class="sub">This is the question that separates people who use AI from people who understand AI.</div>
 </div>
 
 <!-- ===== FILTER ===== -->
@@ -355,16 +464,27 @@
     </div>
 </div>
 
-<!-- ===== MASTER QUESTION ===== -->
-<div class="master-q">
-    <div class="q">
-        <i class="fa-solid fa-quote-left"></i> What information was actually available to the model<br />at the moment it generated this answer?
+<!-- ===== WHAT YOU'LL BUILD ===== -->
+<div class="section-header"><i class="fa-solid fa-hammer"></i><h2>What you'll build</h2><span class="badge">In 60 minutes</span></div>
+<div class="card">
+    <p style="font-size:0.85rem;margin-bottom:0.4rem;">A private document assistant that runs on your laptop. No internet. No cloud. No API key.</p>
+    <div class="timeline">
+        <div class="time">0:00</div>
+        <div class="what"><span class="highlight">Start</span> — load the model, send one test message</div>
+        <div class="time">0:10</div>
+        <div class="what"><span class="highlight">Run</span> — three prompts on your own documents <span>(summarize · extract obligations · find the gap)</span></div>
+        <div class="time">0:40</div>
+        <div class="what"><span class="highlight">Share</span> — see real outputs from the room. Real documents. Real answers.</div>
+        <div class="time">0:50</div>
+        <div class="what"><span class="highlight">Walk out</span> — with three rules, a working model, and a threat model for AI agents</div>
     </div>
-    <div class="sub">This is the question that separates people who use AI from people who understand AI.</div>
+    <p style="font-size:0.75rem;color:var(--accent);font-weight:600;margin-top:0.3rem;">
+        <i class="fa-regular fa-hand-pointer"></i> 80% of the session is you working on your own machine.
+    </p>
 </div>
 
 <!-- ===== AI BUILDING BLOCKS ===== -->
-<div class="section-header"><i class="fa-solid fa-brain"></i><h2>AI building blocks — a human analogy</h2></div>
+<div class="section-header"><i class="fa-solid fa-brain"></i><h2>AI building blocks</h2><span class="badge">Human analogy</span></div>
 <div class="visual-card">
     <img src="images/LLMtypes.jpg" alt="LLM = Brain · RAG = Brain + Books · MCP = Connector · Agent = Brain + Hands" onerror="this.parentElement.style.display='none'" />
     <div class="visual-caption">
@@ -373,8 +493,8 @@
     </div>
 </div>
 
-<!-- ===== THE WINDOW ===== -->
-<div class="section-header"><i class="fa-solid fa-window-maximize"></i><h2>The most dangerous assumption</h2></div>
+<!-- ===== THE BOTTLENECK ===== -->
+<div class="section-header"><i class="fa-solid fa-triangle-exclamation"></i><h2>The most dangerous assumption</h2><span class="badge">Critical</span></div>
 <div class="visual-card">
     <img src="images/image-97.png" alt="Context window as working memory — Daily Dose of Data Science" onerror="this.parentElement.style.display='none'" />
     <div class="visual-caption">
@@ -383,8 +503,8 @@
     </div>
 </div>
 
-<!-- ===== RAG PIPELINE ===== -->
-<div class="section-header"><i class="fa-solid fa-scissors"></i><h2>What happens between upload and answer</h2></div>
+<!-- ===== WHAT HAPPENS BETWEEN UPLOAD AND ANSWER ===== -->
+<div class="section-header"><i class="fa-solid fa-scissors"></i><h2>What happens between upload and answer</h2><span class="badge">RAG pipeline</span></div>
 <div class="visual-card">
     <img src="images/image-101.png" alt="Document chunking and summarization pipeline" onerror="this.parentElement.style.display='none'" />
     <div class="visual-caption">
@@ -402,32 +522,35 @@
 </div>
 
 <!-- ===== THE THREE RULES ===== -->
-<div class="section-header"><i class="fa-solid fa-list-check"></i><h2>You'll leave with three rules</h2></div>
-<div class="rules">
-    <div class="rule-card">
-        <div class="num">1</div>
-        <div class="title">Under 20 pages — attach the file</div>
-        <div class="desc">Model sees most of the content reliably</div>
-    </div>
-    <div class="rule-card">
-        <div class="num">2</div>
-        <div class="title">Over 20 pages — paste the section</div>
-        <div class="desc">You control what the model sees. No truncation.</div>
-    </div>
-    <div class="rule-card">
-        <div class="num">3</div>
-        <div class="title">Always ask for the exact quote</div>
-        <div class="desc">If it can't quote it, it invented it</div>
-    </div>
-</div>
-<p style="font-size:0.75rem;color:var(--text-dim);text-align:center;margin-top:-0.4rem;margin-bottom:0.8rem;">
-    These rules work on ChatGPT, Copilot, Claude, and any AI system. They do not expire when the model changes.
-</p>
-
-<!-- ===== THE TWO TYPES OF FREE ===== -->
-<div class="section-header"><i class="fa-solid fa-code-branch"></i><h2>Two types of "free" AI</h2></div>
+<div class="section-header"><i class="fa-solid fa-list-check"></i><h2>You'll leave with three rules</h2><span class="badge">Take-home</span></div>
 <div class="card">
-    <p style="font-size:0.85rem;margin-bottom:0.6rem;">Knowing which one you're using is a professional responsibility.</p>
+    <p style="font-size:0.85rem;margin-bottom:0.6rem;">These are the rules you'll discover by doing. They work on <strong>every AI system</strong> — ChatGPT, Copilot, Claude, and anything else.</p>
+    <div class="rules">
+        <div class="rule-card">
+            <div class="num">1</div>
+            <div class="title">Under 20 pages — attach the file</div>
+            <div class="desc">Model sees most of the content reliably</div>
+        </div>
+        <div class="rule-card">
+            <div class="num">2</div>
+            <div class="title">Over 20 pages — paste the section</div>
+            <div class="desc">You control what the model sees. No truncation.</div>
+        </div>
+        <div class="rule-card">
+            <div class="num">3</div>
+            <div class="title">Always ask for the exact quote</div>
+            <div class="desc">If it can't quote it, it invented it</div>
+        </div>
+    </div>
+    <p style="font-size:0.7rem;color:var(--text-dim);text-align:center;margin-top:0.2rem;">
+        These rules do not expire when the model changes.
+    </p>
+</div>
+
+<!-- ===== TWO TYPES OF FREE ===== -->
+<div class="section-header"><i class="fa-solid fa-code-branch"></i><h2>Two types of "free" AI</h2><span class="badge">Know the difference</span></div>
+<div class="card">
+    <p style="font-size:0.85rem;margin-bottom:0.6rem;">Knowing which one you're using is a <strong>professional responsibility</strong>.</p>
     <div class="two-types">
         <div class="type-card">
             <div class="type-title">Hosted — someone else runs it</div>
@@ -449,8 +572,35 @@
     </div>
 </div>
 
+<!-- ===== WHERE DOES THIS BREAK? — Threat Model ===== -->
+<div class="section-header"><i class="fa-solid fa-shield-halved"></i><h2>Where does this break?</h2><span class="badge">Threat model</span></div>
+<div class="card">
+    <p style="font-size:0.85rem;margin-bottom:0.6rem;">You're building an agent next year that reads internal policy documents and flags overdue obligations. <strong>Where does it fail without anyone noticing?</strong></p>
+    <div class="threat-grid">
+        <div class="threat-item">
+            <div class="fail">Truncation</div>
+            <div class="what">The agent reads 8% of the document. Misses obligations buried on page 40.</div>
+        </div>
+        <div class="threat-item">
+            <div class="fail">Confidence without accuracy</div>
+            <div class="what">It flags invented obligations with the same tone as real ones.</div>
+        </div>
+        <div class="threat-item">
+            <div class="fail">Document identity confusion</div>
+            <div class="what">In a batch of ten policies, it attributes an obligation from policy three to policy seven.</div>
+        </div>
+        <div class="threat-item">
+            <div class="fail">No citation</div>
+            <div class="what">It gives a confident answer but cannot quote the source.</div>
+        </div>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-dim);margin-top:0.4rem;text-align:center;">
+        <i class="fa-regular fa-lightbulb"></i> You just did the threat model for a 2027 system using what you'll learn in 60 minutes.
+    </p>
+</div>
+
 <!-- ===== PREP ===== -->
-<div class="section-header"><i class="fa-regular fa-circle-check"></i><h2>Before you arrive — do this at home</h2></div>
+<div class="section-header"><i class="fa-regular fa-circle-check"></i><h2>Before you arrive</h2><span class="badge">Do this at home</span></div>
 <div class="card">
     <p style="font-size:0.85rem;margin-bottom:0.6rem;">One install. One download. That's it.</p>
     <div class="checklist">
@@ -490,7 +640,7 @@
 </div>
 
 <!-- ===== PROMPTS ===== -->
-<div class="section-header"><i class="fa-solid fa-terminal"></i><h2>Three prompts you'll run</h2></div>
+<div class="section-header"><i class="fa-solid fa-terminal"></i><h2>Three prompts you'll run</h2><span class="badge">Copy & paste</span></div>
 <div class="card">
     <p style="font-size:0.8rem;margin-bottom:0.6rem;">Copy these. Paste them into LM Studio with your document attached.</p>
 
@@ -529,7 +679,7 @@
 </div>
 
 <!-- ===== RESOURCES ===== -->
-<div class="section-header"><i class="fa-solid fa-gift"></i><h2>Free resources — take home</h2></div>
+<div class="section-header"><i class="fa-solid fa-gift"></i><h2>Free resources</h2><span class="badge">Take home</span></div>
 <div class="card">
     <div class="resource-grid">
         <a class="resource-item" href="https://lmstudio.ai" target="_blank"><i class="fa-solid fa-desktop"></i> LM Studio</a>
