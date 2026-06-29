@@ -114,7 +114,7 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             overflow: hidden;
-            margin: 1rem 0;
+            margin: 0.8rem 0;
             box-shadow: var(--shadow);
         }
         .visual-card img {
@@ -133,6 +133,7 @@
             background: var(--bg-card);
         }
         .visual-caption i { color: var(--accent); }
+        .visual-caption strong { color: var(--text); }
 
         /* RULES */
         .rules {
@@ -254,6 +255,61 @@
             letter-spacing: 0.05em;
             margin-top: 0.3rem;
         }
+
+        .danger-box {
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            border-radius: 6px;
+            padding: 0.6rem 0.8rem;
+            margin-top: 0.6rem;
+            font-size: 0.78rem;
+        }
+        .danger-box strong { color: var(--accent); }
+
+        .master-q {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem 1.5rem;
+            margin: 0 0 1rem;
+            text-align: center;
+        }
+        .master-q .q {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ft-navy);
+        }
+        .master-q .q i { color: var(--accent); margin-right: 0.3rem; }
+        .master-q .sub {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-top: 0.2rem;
+            font-weight: 400;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.4rem;
+        }
+        .resource-item {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-sm);
+            padding: 0.4rem 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            transition: all 0.15s;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .resource-item:hover { border-color: var(--accent-border); text-decoration: none; }
+        .resource-item i { color: var(--accent); font-size: 0.7rem; width: 0.9rem; text-align: center; flex-shrink: 0; }
+
+        @media (max-width: 640px) { .resource-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 420px) { .resource-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -299,45 +355,74 @@
     </div>
 </div>
 
-<!-- ===== WHAT THE MODEL SEES (with picture) ===== -->
-<div class="section-header"><i class="fa-solid fa-triangle-exclamation"></i><h2>What the model actually sees</h2></div>
-<div class="visual-card">
-    <img src="images/image-97.png" alt="Context window as working memory" onerror="this.parentElement.style.display='none'" />
-    <div class="visual-caption">
-        <i class="fa-solid fa-lightbulb"></i>
-        The context window is working memory. The model sees a slice, not the whole document.
+<!-- ===== MASTER QUESTION ===== -->
+<div class="master-q">
+    <div class="q">
+        <i class="fa-solid fa-quote-left"></i> What information was actually available to the model<br />at the moment it generated this answer?
     </div>
+    <div class="sub">This is the question that separates people who use AI from people who understand AI.</div>
 </div>
 
-<!-- ===== THE THREE RULES ===== -->
-<div class="section-header"><i class="fa-solid fa-list-check"></i><h2>You'll leave with these three rules</h2></div>
-<div class="rules">
-    <div class="rule-card">
-        <div class="num">1</div>
-        <div class="title">Under 20 pages — attach the file</div>
-        <div class="desc">Model sees most of the content</div>
-    </div>
-    <div class="rule-card">
-        <div class="num">2</div>
-        <div class="title">Over 20 pages — paste the section</div>
-        <div class="desc">You control what the model sees</div>
-    </div>
-    <div class="rule-card">
-        <div class="num">3</div>
-        <div class="title">Always ask for the exact quote</div>
-        <div class="desc">If it can't quote, it invented it</div>
-    </div>
-</div>
-
-<!-- ===== AI ANALOGY (with picture) ===== -->
+<!-- ===== AI BUILDING BLOCKS ===== -->
 <div class="section-header"><i class="fa-solid fa-brain"></i><h2>AI building blocks — a human analogy</h2></div>
 <div class="visual-card">
     <img src="images/LLMtypes.jpg" alt="LLM = Brain · RAG = Brain + Books · MCP = Connector · Agent = Brain + Hands" onerror="this.parentElement.style.display='none'" />
     <div class="visual-caption">
         <i class="fa-solid fa-sitemap"></i>
-        LLM = Brain · RAG = Brain + Books · MCP = Connector · AI Agent = Brain + Hands
+        <strong>LLM = Brain</strong> · <strong>RAG = Brain + Books</strong> · <strong>MCP = Connector</strong> · <strong>AI Agent = Brain + Hands</strong>
     </div>
 </div>
+
+<!-- ===== THE WINDOW ===== -->
+<div class="section-header"><i class="fa-solid fa-window-maximize"></i><h2>The most dangerous assumption</h2></div>
+<div class="visual-card">
+    <img src="images/image-97.png" alt="Context window as working memory — Daily Dose of Data Science" onerror="this.parentElement.style.display='none'" />
+    <div class="visual-caption">
+        <i class="fa-solid fa-triangle-exclamation" style="color:var(--accent);"></i>
+        <span><strong>“When I upload a document, the model reads it.”</strong> — It does not. The context window is working memory. The model sees a slice, not the whole document.</span>
+    </div>
+</div>
+
+<!-- ===== RAG PIPELINE ===== -->
+<div class="section-header"><i class="fa-solid fa-scissors"></i><h2>What happens between upload and answer</h2></div>
+<div class="visual-card">
+    <img src="images/image-101.png" alt="Document chunking and summarization pipeline" onerror="this.parentElement.style.display='none'" />
+    <div class="visual-caption">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Documents are <strong>chunked</strong>, processed, and stitched back together. For summarization, <strong>coverage replaces relevance</strong> as the goal.
+    </div>
+</div>
+
+<div class="visual-card">
+    <img src="images/image-98.png" alt="RAG retrieval pipeline" onerror="this.parentElement.style.display='none'" />
+    <div class="visual-caption">
+        <i class="fa-solid fa-database"></i>
+        <strong>RAG pipeline:</strong> Query → Embed → Vector search → Similar documents → Prompt → LLM → Response. The bottleneck is <strong>similarity search</strong>, not the model.
+    </div>
+</div>
+
+<!-- ===== THE THREE RULES ===== -->
+<div class="section-header"><i class="fa-solid fa-list-check"></i><h2>You'll leave with three rules</h2></div>
+<div class="rules">
+    <div class="rule-card">
+        <div class="num">1</div>
+        <div class="title">Under 20 pages — attach the file</div>
+        <div class="desc">Model sees most of the content reliably</div>
+    </div>
+    <div class="rule-card">
+        <div class="num">2</div>
+        <div class="title">Over 20 pages — paste the section</div>
+        <div class="desc">You control what the model sees. No truncation.</div>
+    </div>
+    <div class="rule-card">
+        <div class="num">3</div>
+        <div class="title">Always ask for the exact quote</div>
+        <div class="desc">If it can't quote it, it invented it</div>
+    </div>
+</div>
+<p style="font-size:0.75rem;color:var(--text-dim);text-align:center;margin-top:-0.4rem;margin-bottom:0.8rem;">
+    These rules work on ChatGPT, Copilot, Claude, and any AI system. They do not expire when the model changes.
+</p>
 
 <!-- ===== THE TWO TYPES OF FREE ===== -->
 <div class="section-header"><i class="fa-solid fa-code-branch"></i><h2>Two types of "free" AI</h2></div>
@@ -359,18 +444,8 @@
             </div>
         </div>
     </div>
-    <div style="background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:6px;padding:0.6rem 0.8rem;margin-top:0.6rem;font-size:0.78rem;">
-        <strong style="color:var(--accent);">The hidden cost:</strong> Most free hosted tiers train on your prompts. Your business logic. Your client data. If it contains sensitive information — self-host or pay.
-    </div>
-</div>
-
-<!-- ===== RAG PIPELINE (with picture) ===== -->
-<div class="section-header"><i class="fa-solid fa-scissors"></i><h2>How document retrieval works</h2></div>
-<div class="visual-card">
-    <img src="images/image-101.png" alt="Chunking and summarization pipeline" onerror="this.parentElement.style.display='none'" />
-    <div class="visual-caption">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        Documents are chunked, processed, and stitched back together. Coverage replaces relevance for summarization tasks.
+    <div class="danger-box">
+        <strong><i class="fa-solid fa-skull-crosswires"></i> The hidden cost:</strong> Most free hosted tiers train on your prompts. Your business logic. Your client data. If it contains sensitive information — self-host or pay.
     </div>
 </div>
 
@@ -453,16 +528,16 @@
     </div>
 </div>
 
-<!-- ===== FREE RESOURCES ===== -->
+<!-- ===== RESOURCES ===== -->
 <div class="section-header"><i class="fa-solid fa-gift"></i><h2>Free resources — take home</h2></div>
 <div class="card">
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.4rem;">
-        <a class="resource-item" href="https://lmstudio.ai" target="_blank" style="background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:var(--radius-sm);padding:0.4rem 0.7rem;display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;text-decoration:none;color:var(--text);"><i class="fa-solid fa-desktop" style="color:var(--accent);"></i> LM Studio</a>
-        <a class="resource-item" href="https://ollama.com" target="_blank" style="background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:var(--radius-sm);padding:0.4rem 0.7rem;display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;text-decoration:none;color:var(--text);"><i class="fa-solid fa-terminal" style="color:var(--accent);"></i> Ollama</a>
-        <a class="resource-item" href="https://aistudio.google.com" target="_blank" style="background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:var(--radius-sm);padding:0.4rem 0.7rem;display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;text-decoration:none;color:var(--text);"><i class="fa-brands fa-google" style="color:var(--accent);"></i> Google AI Studio</a>
-        <a class="resource-item" href="https://huggingface.co" target="_blank" style="background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:var(--radius-sm);padding:0.4rem 0.7rem;display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;text-decoration:none;color:var(--text);"><i class="fa-solid fa-face-smile" style="color:var(--accent);"></i> Hugging Face</a>
-        <a class="resource-item" href="https://build.nvidia.com" target="_blank" style="background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:var(--radius-sm);padding:0.4rem 0.7rem;display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;text-decoration:none;color:var(--text);"><i class="fa-solid fa-n" style="color:var(--accent);"></i> NVIDIA API</a>
-        <a class="resource-item" href="https://console.groq.com" target="_blank" style="background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:var(--radius-sm);padding:0.4rem 0.7rem;display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;text-decoration:none;color:var(--text);"><i class="fa-solid fa-bolt" style="color:var(--accent);"></i> Groq</a>
+    <div class="resource-grid">
+        <a class="resource-item" href="https://lmstudio.ai" target="_blank"><i class="fa-solid fa-desktop"></i> LM Studio</a>
+        <a class="resource-item" href="https://ollama.com" target="_blank"><i class="fa-solid fa-terminal"></i> Ollama</a>
+        <a class="resource-item" href="https://aistudio.google.com" target="_blank"><i class="fa-brands fa-google"></i> Google AI Studio</a>
+        <a class="resource-item" href="https://huggingface.co" target="_blank"><i class="fa-solid fa-face-smile"></i> Hugging Face</a>
+        <a class="resource-item" href="https://build.nvidia.com" target="_blank"><i class="fa-solid fa-n"></i> NVIDIA API</a>
+        <a class="resource-item" href="https://console.groq.com" target="_blank"><i class="fa-solid fa-bolt"></i> Groq</a>
     </div>
     <p style="font-size:0.65rem;color:var(--text-dim);margin-top:0.4rem;text-align:center;">
         Hosted = convenient · Self-hosted = private · Choose based on the job, not the benchmark
