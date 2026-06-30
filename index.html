@@ -408,28 +408,6 @@
     </div>
 </div>
 
-<div class="sh"><i class="fa-solid fa-arrow-right-arrow-left"></i><h2>Act Three: RAG fixes it</h2><span class="tag green">The reveal</span></div>
-<div class="card">
-    <p style="font-size:0.85rem;margin-bottom:0.6rem;"><strong>Same document. Same question. Different answer.</strong> This is why RAG exists.</p>
-    <div class="rag-compare">
-        <div class="rag-col rag-before">
-            <div class="rag-label"><i class="fa-solid fa-xmark"></i> LM Studio — Act Two</div>
-            <div class="rag-title">The model sees 8%</div>
-            <div class="rag-desc">501-page document. Context window: 16,000–32,000 tokens. The model answers confidently. Obligations after page 50 are missing. No warning. No citation.</div>
-            <div class="rag-result"><strong>Result:</strong> Confident. Incomplete. Wrong.</div>
-        </div>
-        <div class="rag-col rag-after">
-            <div class="rag-label"><i class="fa-solid fa-check"></i> AnythingLLM — Act Three</div>
-            <div class="rag-title">The model sees the right piece — more often</div>
-            <div class="rag-desc">Same document. Embedded. Vector search. Retrieves the most relevant chunks. The model answers with citations you can check. More complete. More grounded.</div>
-            <div class="rag-result"><strong>Result:</strong> Better. Still not perfect. Still worth checking.</div>
-        </div>
-    </div>
-    <p style="font-size:0.74rem;color:var(--dim);margin-top:0.4rem;text-align:center;">
-        <i class="fa-regular fa-lightbulb"></i> RAG does not make the model smarter. It makes the model more likely to see the right part of the document. It can still miss things — wrong chunk, weak embedding, an oddly worded question. Rule Three still applies: ask for the quote.
-    </p>
-</div>
-
 <div class="collapsible" id="setup">
     <div class="col-trigger" onclick="toggle(this)">
         <i class="fa-solid fa-circle-check icon"></i>
@@ -476,6 +454,13 @@
                     </div>
                     <span class="check-badge">Bring</span>
                 </div>
+            </div>
+
+            <div class="danger" style="margin-top:1rem;">
+                <div class="d-title"><i class="fa-solid fa-wrench"></i> Nothing to install for Act Three</div>
+                <div class="d-row" style="display:block;">AnythingLLM — the tool behind Act Three — is pre-installed and pre-loaded on the facilitator's machine. You don't need it tonight. You watch it work, then take the setup steps home with you.</div>
+                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> <strong>Setup, once:</strong> the document is chunked, then each chunk becomes a vector and gets indexed — about 30 minutes on CPU</div>
+                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> <strong>Every question, seconds:</strong> your question becomes a vector too — only the closest-matching chunks get sent to the model</div>
             </div>
         </div>
     </div>
@@ -688,11 +673,11 @@ Part 3: Why it matters (two sentences)</div>
             </div>
 
             <div class="danger" style="margin-top:1rem;">
-                <div class="d-title"><i class="fa-solid fa-list-check"></i> What RAG needs to work at home</div>
-                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> A RAG tool — AnythingLLM is the easiest free option, fully local</div>
-                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> A local embedding model — AnythingLLM bundles one by default, no extra download</div>
-                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> A chat model — point it at the same Phi-4 Mini or Qwen2.5 you already have in LM Studio</div>
-                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> Time to embed — large documents take 20–40 minutes once, on CPU. After that, every question is fast</div>
+                <div class="d-title"><i class="fa-solid fa-list-check"></i> Setting up AnythingLLM at home — 4 steps</div>
+                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> <strong>1.</strong> Install AnythingLLM, connect it to LM Studio as the LLM provider, keep the default embedder — no extra download</div>
+                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> <strong>2.</strong> Create a Workspace, name it anything</div>
+                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> <strong>3.</strong> Upload your document, click "Save and Embed" — large docs take 20–40 min on CPU, one-time cost</div>
+                <div class="d-row"><span class="d-yes"><i class="fa-solid fa-check"></i></span> <strong>4.</strong> Ask your question — citations included, every answer after this is fast</div>
             </div>
         </div>
     </div>
