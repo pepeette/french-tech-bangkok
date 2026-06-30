@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* ─── Brand Identity ─── */
         :root {
             --red: #E1000F;
             --red-soft: rgba(225,0,15,0.06);
@@ -51,7 +50,6 @@
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-        /* ─── TYPOGRAPHY ─── */
         h1 {
             font-size: clamp(2rem, 5vw, 2.8rem);
             font-weight: 800;
@@ -117,7 +115,7 @@
             .hero-logo img { height: 48px; }
         }
 
-        /* ─── HOOK / MASTER QUESTION ─── */
+        /* ─── HOOK + MASTER QUESTION ─── */
         .hook-master {
             background: var(--card);
             border: 2px solid var(--red);
@@ -343,6 +341,57 @@
             gap: 0.5rem;
         }
         .bn-arrow::before { content: '↓'; }
+
+        /* ─── RAG COMPARISON (BEFORE / AFTER) ─── */
+        .rag-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            margin: 0.6rem 0;
+        }
+        .rag-col {
+            border-radius: var(--r-sm);
+            padding: 0.9rem 1.1rem;
+            transition: transform 0.15s;
+        }
+        .rag-col:hover { transform: translateY(-2px); }
+        .rag-col.rag-before {
+            background: var(--red-soft);
+            border: 1px solid rgba(225,0,15,0.15);
+        }
+        .rag-col.rag-after {
+            background: var(--green-soft);
+            border: 1px solid rgba(30,122,78,0.15);
+        }
+        .rag-col .rag-label {
+            font-size: 0.55rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.3rem;
+        }
+        .rag-before .rag-label { color: var(--red); }
+        .rag-after .rag-label { color: var(--green); }
+        .rag-col .rag-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 0.15rem;
+        }
+        .rag-col .rag-desc {
+            font-size: 0.76rem;
+            color: var(--muted);
+        }
+        .rag-col .rag-result {
+            font-size: 0.72rem;
+            color: var(--dim);
+            margin-top: 0.3rem;
+            padding-top: 0.3rem;
+            border-top: 1px solid var(--border-soft);
+        }
+        .rag-col .rag-result strong { color: var(--text); }
+
+        @media (max-width: 540px) { .rag-compare { grid-template-columns: 1fr; } }
 
         /* ─── THREE RULES ─── */
         .rules {
@@ -710,6 +759,15 @@
             margin-top: 0.3rem;
         }
 
+        .footer .ft-2027 {
+            font-size: 0.72rem;
+            color: var(--red);
+            font-weight: 600;
+            margin-top: 0.4rem;
+            padding-top: 0.4rem;
+            border-top: 1px solid var(--border-soft);
+        }
+
         /* ─── RESPONSIVE ─── */
         @media (max-width: 640px) {
             body { font-size: 14px; padding: 0 12px 50px; }
@@ -751,7 +809,7 @@
     <p class="hero-tagline">Your documents. Your model. Your machine. Nothing leaves the room.</p>
 </div>
 
-<!-- ─── HOOK + MASTER QUESTION (combined) ─── -->
+<!-- ─── HOOK + MASTER QUESTION ─── -->
 <div class="hook-master">
     <div class="hook">
         <i class="fa-regular fa-clock"></i> How long does it take you to find one answer in a document like this?
@@ -773,14 +831,14 @@
         <div class="act-desc">Small document. Local model. Private. Real answer. Thirty seconds.</div>
     </div>
     <div class="act-card act-two">
-        <div class="act-label"><i class="fa-solid fa-triangle-exclamation"></i> Act Two</div>
-        <div class="act-title">It breaks.</div>
-        <div class="act-desc">Large document. Confident wrong answer. You see exactly why.</div>
+        <div class="act-label"><i class="fa-solid fa-triangle-exclamation"></i> Act Two — It breaks.</div>
+        <div class="act-title">501 pages. The model reads 8%.</div>
+        <div class="act-desc">Confident wrong answer. You see exactly why. <strong>This is where the rules are discovered.</strong></div>
     </div>
     <div class="act-card">
-        <div class="act-label"><i class="fa-solid fa-wrench"></i> Act Three</div>
-        <div class="act-title">RAG fixes it.</div>
-        <div class="act-desc">Same large document. Private RAG. Correct answer. You own this setup.</div>
+        <div class="act-label"><i class="fa-solid fa-wrench"></i> Act Three — RAG fixes it.</div>
+        <div class="act-title">Same document. Different answer.</div>
+        <div class="act-desc">Private RAG. Correct answer. You own this setup.</div>
     </div>
 </div>
 
@@ -870,9 +928,9 @@
 </div>
 
 <!-- ─── THREE RULES ─── -->
-<div class="sh"><i class="fa-solid fa-list-check"></i><h2>The three rules</h2><span class="tag green">Take home</span></div>
+<div class="sh"><i class="fa-solid fa-list-check"></i><h2>The three rules</h2><span class="tag green">Discovered in Act Two</span></div>
 <div class="card">
-    <p style="font-size:0.85rem;margin-bottom:0.7rem;">These rules work on <strong>every AI system you will ever use</strong>. They do not expire when the model changes.</p>
+    <p style="font-size:0.85rem;margin-bottom:0.7rem;">You'll discover these when the large document fails. They work on <strong>every AI system you will ever use</strong>. They do not expire when the model changes.</p>
     <div class="rules">
         <div class="rule">
             <div class="rule-n">1</div>
@@ -908,6 +966,29 @@
         <i class="fa-solid fa-database"></i>
         <span><strong>RAG pipeline:</strong> Query → Embed → Vector search → Similar documents → Prompt → LLM → Response. The bottleneck is <strong>similarity search</strong>, not the model.</span>
     </div>
+</div>
+
+<!-- ─── ACT THREE: RAG COMPARISON ─── -->
+<div class="sh"><i class="fa-solid fa-arrow-right-arrow-left"></i><h2>Act Three: RAG fixes it</h2><span class="tag green">The reveal</span></div>
+<div class="card">
+    <p style="font-size:0.85rem;margin-bottom:0.6rem;"><strong>Same document. Same question. Different answer.</strong> This is why RAG exists.</p>
+    <div class="rag-compare">
+        <div class="rag-col rag-before">
+            <div class="rag-label"><i class="fa-solid fa-xmark"></i> LM Studio — Act Two</div>
+            <div class="rag-title">The model sees 8%</div>
+            <div class="rag-desc">501-page document. Context window: 16,000–32,000 tokens. The model answers confidently. Obligations after page 50 are missing. No warning. No citation.</div>
+            <div class="rag-result"><strong>Result:</strong> Confident. Incomplete. Wrong.</div>
+        </div>
+        <div class="rag-col rag-after">
+            <div class="rag-label"><i class="fa-solid fa-check"></i> AnythingLLM — Act Three</div>
+            <div class="rag-title">The model sees the right piece</div>
+            <div class="rag-desc">Same document. Embedded. Vector search. Retrieves the right chunks. The model answers with citations. Every obligation found. Page numbers included.</div>
+            <div class="rag-result"><strong>Result:</strong> Complete. Grounded. Verifiable.</div>
+        </div>
+    </div>
+    <p style="font-size:0.74rem;color:var(--dim);margin-top:0.4rem;text-align:center;">
+        <i class="fa-regular fa-lightbulb"></i> RAG does not make the model smarter. It makes sure the model sees the right part of the document.
+    </p>
 </div>
 
 <!-- ─── SETUP ─── -->
@@ -1098,40 +1179,31 @@ Part 3: Why it matters (two sentences)</div>
     </div>
 </div>
 
-<!-- ─── THREAT MODEL ─── -->
-<div class="collapsible" id="threats">
-    <div class="col-trigger" onclick="toggle(this)">
-        <i class="fa-solid fa-shield-halved icon"></i>
-        <h2>Where does this break?</h2>
-        <span class="sh-tag">2027 threat model</span>
-        <i class="fa-solid fa-chevron-right chevron"></i>
-    </div>
-    <div class="col-body">
-        <div class="card">
-            <p style="font-size:0.85rem;margin-bottom:0.6rem;">You are building an agent next year that reads internal policy documents, finds every obligation assigned to your department, and flags anything overdue. Where does it fail without anyone noticing?</p>
-            <div class="threats">
-                <div class="threat">
-                    <div class="threat-name">Truncation</div>
-                    <div class="threat-desc">The agent reads 8% of the document. Misses obligations buried on page 40. Reports nothing overdue. Everything looks fine.</div>
-                </div>
-                <div class="threat">
-                    <div class="threat-name">Confidence without accuracy</div>
-                    <div class="threat-desc">It flags invented obligations with the same tone as real ones. You act on something that was never written.</div>
-                </div>
-                <div class="threat">
-                    <div class="threat-name">Document identity confusion</div>
-                    <div class="threat-desc">In a batch of ten policies, it attributes an obligation from policy three to policy seven. Wrong team gets flagged.</div>
-                </div>
-                <div class="threat">
-                    <div class="threat-name">No citation</div>
-                    <div class="threat-desc">It gives a confident answer but cannot quote the source. You cannot verify it. You cannot challenge it.</div>
-                </div>
-            </div>
-            <p style="font-size:0.72rem;color:var(--dim);margin-top:0.5rem;text-align:center;">
-                <i class="fa-regular fa-lightbulb"></i> The three rules prevent all four of these failures. That is why they exist.
-            </p>
+<!-- ─── WHERE DOES THIS BREAK? (flows from Act Two) ─── -->
+<div class="sh"><i class="fa-solid fa-shield-halved"></i><h2>Where does this break?</h2><span class="tag">The threat model</span></div>
+<div class="card">
+    <p style="font-size:0.85rem;margin-bottom:0.6rem;">You're building an agent next year that reads internal policy documents and flags overdue obligations. <strong>Where does it fail without anyone noticing?</strong></p>
+    <div class="threats">
+        <div class="threat">
+            <div class="threat-name">Truncation</div>
+            <div class="threat-desc">The agent reads 8% of the document. Misses obligations buried on page 40. Reports nothing overdue. Everything looks fine.</div>
+        </div>
+        <div class="threat">
+            <div class="threat-name">Confidence without accuracy</div>
+            <div class="threat-desc">It flags invented obligations with the same tone as real ones. You act on something that was never written.</div>
+        </div>
+        <div class="threat">
+            <div class="threat-name">Document identity confusion</div>
+            <div class="threat-desc">In a batch of ten policies, it attributes an obligation from policy three to policy seven. Wrong team gets flagged.</div>
+        </div>
+        <div class="threat">
+            <div class="threat-name">No citation</div>
+            <div class="threat-desc">It gives a confident answer but cannot quote the source. You cannot verify it. You cannot challenge it.</div>
         </div>
     </div>
+    <p style="font-size:0.72rem;color:var(--dim);margin-top:0.5rem;text-align:center;">
+        <i class="fa-regular fa-lightbulb"></i> The three rules prevent all four of these failures. That is why they exist.
+    </p>
 </div>
 
 <!-- ─── ROADMAP ─── -->
@@ -1253,6 +1325,10 @@ Part 3: Why it matters (two sentences)</div>
     <div class="ft-title">Your documents. Your model. Your machine.</div>
     <p>Nothing leaves the room.</p>
     <div class="ft-badge">LA FRENCH TECH · BANGKOK · JULY 15, 2026</div>
+    <div class="ft-2027">
+        <i class="fa-regular fa-compass"></i> Your competitors build agents that break silently.<br>
+        You know where to look. That skill started tonight.
+    </div>
 </div>
 
 </div>
